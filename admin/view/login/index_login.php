@@ -4,51 +4,50 @@
 	<title>SRM mHealth Login</title>
 
 	<!-- css files -->
-	<link rel="stylesheet" type="text/css" href="../css/index.css">
-	<link rel="stylesheet" type="text/css" href="../css/input.css">
-	<link rel="stylesheet" type="text/css" href="../css/login.css">
-
-	<!-- js files -->
-	<script type="text/javascript" src="../js/jquery.js"></script>
-	<script type="text/javascript" src="../js/js_built_in.js"></script>
-	<script type="text/javascript" src="../js/login.js"></script>
 	
-	<script>
-		
-	</script>
+	<?php 
+		include "../include/link.php";
+	?>
+	<script type="text/javascript" src="../asset/js/login.js"></script>
+	
 </head>
-<body>
-	<div id='wrapper'>
-		<div id='container'>
-			<div id='loginWrapper' class='containerChild'>
-				<div id='loginFormContainer'>
-					<div id='loginErr' class='err'></div>
-					<form name='adminLoginForm' id="loginform" method="post">
-						<table border="0px" cellspacing="25px">
-							<tr>
-								<th>
-									Enter Admin Id
-								</th>
-								<td>
-									<input type='text' name='loginUserId' maxlength="10" class='userId text input' placeholder='Admin ID' required>
-								</td>
-							</tr>
-							<tr>
-								<th>
-									Enter Password
-								</th>
-								<td>
-									<input type='password' name='loginPassword' maxlength="15" class='password text input' placeholder='Password'>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2" class='submitBtnHolder'>
-									<input type='submit' name='adminLoginSubmit' value='LOG IN' class='login btn'>
-								</td>
-							</tr>
-						</table>
-					</form>
+<body id="signup">
+	<div class="container">
+		<div class="row header">
+			<div class="col-md-12">
+				<h3 class="logo">
+					<a href="index.html">mPower</a>
+				</h3>
+				<h4>Sign in to your account.</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="wrapper clearfix">
+					<div class="formy">
+						<div class="row">
+							<div class="col-md-12">
+								<form role="form" name='adminLoginForm' id="loginform" method="post">
+							  		<div class="form-group">
+							    		<label for="email">Username</label>
+							    		<input type="text" name='loginUserId' maxlength="10" class="form-control userId" 
+							    		 required placeholder="Enter your username."/>
+							  		</div>
+							  		<div class="form-group">
+							    		<label for="password">Password</label>
+							    		<input type='password' name='loginPassword' maxlength="15"  class="form-control"  placeholder="Enter your password." />
+							  		</div>
+							  		<div class="submit">
+							  			<a href="index.html" class="button-clear">
+								  			<span>Sign in </span>
+								  		</a>
+							  		</div>
+								</form>
+							</div>
+						</div>						
+					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>

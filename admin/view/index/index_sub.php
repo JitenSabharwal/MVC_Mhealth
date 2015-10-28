@@ -10,23 +10,27 @@ else
 	$_SESSION['param1']=nil;
 }
 ?>
+ <?php 
+	  		include "../include/link.php";
+	  ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Admin Panel | SRM mHealth</title>
 
 	<!-- css files -->
-	<link rel="stylesheet" type="text/css" href="./css/input.css">
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-  
+	
 	<!-- js files to be included -->
-	<script type="text/javascript" src="./js/jquery.js"></script>
 	<script type="text/javascript" src="./js/routes.js"></script>
 
 
 	<!-- inline js scripting -->
 	</head>
 <body>
+	<?php 
+		include "../header/header.php";
+	 ?>
+	
 	<div id='wrapper'>
 		<div id='container' >
 			<div id='admin_panel_wrapper'>

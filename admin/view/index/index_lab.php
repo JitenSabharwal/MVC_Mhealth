@@ -10,21 +10,39 @@ else
 	$_SESSION['param1']=nil;
 }
 ?>
-<!DOCTYPE html>
 <html>
+ <?php 
+	  		include "../include/link.php";
+	  ?>
 <head>
-	<title>Admin Panel | SRM mHealth</title>
+	<title>LabTechnician Panel | SRM mHealth</title>
 
-	<!-- css files -->
-	  
-	<!-- js files to be included -->
-	<script type="text/javascript" src="./js/jquery.js"></script>
 	<script type="text/javascript" src="./js/routes.js"></script>
-
+	
 
 	<!-- inline js scripting -->
-	</head>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var xml=createAjaxObj();
+			xml.open("get","./checkLoginStatus.php",true);
+			xml.send();
+			xml.onreadystatechange=function()
+			{
+				if(xml.readyState==4 && xml.status==200)
+				{
+					if(xml.responseText=="0")
+					//	window.location="./login";
+					console.log(xml.responseText);
+				}
+			}
+		});
+	</script>
+</head>
 <body>
+	<?php 
+		include "../header/header.php";
+	 ?>
+	
 	<div id='wrapper'>
 		<div id='container' >
 			<div id='admin_panel_wrapper'>
@@ -37,7 +55,8 @@ else
 										<div>
 											<ul>
 												<li class="addSubscriber btn btn-primary">Add Subscriber</li>
-												<li class='addLabtech btn btn-primary'>Add Lab Techinician</li>
+												<li class="sputum btn btn-primary">Sputum Test</li>
+												<li class="xray btn btn-primary">Xray Test</li>
 												<li class="search_sub btn btn-primary">View Subscriber</li>
 												<li class="logout btn btn-primary">Logout</li>
 											</ul>

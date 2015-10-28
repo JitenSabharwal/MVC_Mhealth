@@ -6,86 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />	
 	<title>mPower</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<!-- stylesheets -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="css/theme.css">
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
-	<link href="css/custom-style.css" rel="stylesheet" type="text/css">
-
-	<!-- javascript -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/theme.js"></script>
-
-	<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-</head>
+	  <?php 
+	  		include "../include/link.php";
+	  ?>
+	</head>
 <body id="home">
-	<header class="navbar navbar-inverse hero" role="banner">
-  		<div class="container">
-    		<div class="navbar-header">
-		      	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-		      	</button>
-      			<a href="index.html" class="navbar-brand">mPower</a>
-    		</div>
-    		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      			<ul class="nav navbar-nav navbar-right">
-      				<li class="dropdown">
-        				<a href="#">Home</a>
-        			</li>
-        			<li class="dropdown">
-        				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          					Subscriber <b class="caret"></b>
-          				</a>
-          				<ul class="dropdown-menu">
-							<li><a href="features.html">Add Subscriber</a></li>
-							<li><a href="services.html">View Subscriber</a></li>
-				        </ul>
-        			</li>
-        			<li class="dropdown">
-          				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          					Test<b class="caret"></b>
-          				</a>
-          				<ul class="dropdown-menu">
-							<li><a href="pricing.html">Lab Sputum Test</a></li>
-							<li><a href="charts.html">Lab Xray Test</a></li>
-				        </ul>
-        			</li>
-        			<li class="dropdown">
-        				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          					More<b class="caret"></b>
-          				</a>
-          				<ul class="dropdown-menu">
-							<li><a href="aboutus.html">About us</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="support.html">Support</a></li>
-							<li><a href="contactus.html">Contact us</a></li>
-				        </ul>
-        			</li>
-        			<li class="dropdown">
-        				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          					<?php # name of the loggedin user ?>Shubam<b class="caret"></b>
-          				</a>
-          				<ul class="dropdown-menu">
-							<li><a href="#dropdown1" data-toggle="tab">Profile</a></li>
-							<li><a href="#dropdown2" data-toggle="tab">Inbox</a></li>
-							<li><a href="#dropdown3" data-toggle="tab">Settings</a></li>
-      						<li class="divider"></li>
-    						<li><a href="#dropdown4" data-toggle="tab"><i class="fa fa-fw fa-power-off"></i>Log Out</a></li>
-
-
-				        </ul>
-        			</li>
-      			</ul>
-    		</nav>
-  		</div>
-	</header>
-
 	<div id="hero">
 		<div class="container">
 			<h1 class="hero-text animated fadeInDown">
@@ -120,7 +45,7 @@
 					</p>
 				</div>
 				<div class="col-md-6 image">
-					<img src="images/feature1.png" class="img-responsive" alt="feature1" />
+					<img src="../asset/images/feature1.png" class="img-responsive" alt="feature1" />
 				</div>
 			</div>
 			<div class="divider"></div>
@@ -135,7 +60,7 @@
 					</p>
 				</div>
 				<div class="col-md-6 image">
-					<img src="images/feature2.png" class="img-responsive" alt="feature2" />
+					<img src="../asset/images/feature2.png" class="img-responsive" alt="feature2" />
 				</div>
 			</div>
 		</div>		
@@ -155,19 +80,19 @@
 						<div class="btn-nav prev"></div>
 						<div class="btn-nav next"></div>
 						<div class="slide active">
-							<img src="images/slider/slide3.png" alt="slide3" />
+							<img src="../asset/images/slider/slide3.png" alt="slide3" />
 						</div>
 						<div class="slide">
-							<img src="images/slider/slide4.png" alt="slide4" />
+							<img src="../asset/images/slider/slide4.png" alt="slide4" />
 						</div>
 						<div class="slide">
-							<img src="images/slider/slide1.png" alt="slide1" />
+							<img src="../asset/images/slider/slide1.png" alt="slide1" />
 						</div>
 						<div class="slide">
-							<img src="images/slider/slide5.png" alt="slide5" />
+							<img src="../asset/images/slider/slide5.png" alt="slide5" />
 						</div>
 						<div class="slide">
-							<img src="images/slider/slide2.png" alt="slide2" />
+							<img src="../asset/images/slider/slide2.png" alt="slide2" />
 						</div>
 					</div>
 				</div>	
@@ -186,11 +111,11 @@
 						These are some of our patients who are leading a happy and healthy life.
 					</p>
 					<div class="logos" style="display:inline-block;">
-						<img src="images/patients/sample.jpg">
-						<img src="images/patients/sample.jpg">
-						<img src="images/patients/sample.jpg">
-						<img src="images/patients/sample.jpg">
-						<img src="images/patients/sample.jpg">
+						<img src="../asset/images/patients/sample.jpg">
+						<img src="../asset/images/patients/sample.jpg">
+						<img src="../asset/images/patients/sample.jpg">
+						<img src="../asset/images/patients/sample.jpg">
+						<img src="../asset/images/patients/sample.jpg">
 					</div>
 				</div>
 			</div>
@@ -268,10 +193,10 @@
 						</form>
 					</div>
 					<a href="#">
-						<img src="images/social-tw.png" alt="twitter" />
+						<img src="../asset/images/social-tw.png" alt="twitter" />
 					</a>
 					<a href="#">
-						<img src="images/social-dbl.png" alt="dribbble" />
+						<img src="../asset/images/social-dbl.png" alt="dribbble" />
 					</a>
 				</div>
 			</div>
