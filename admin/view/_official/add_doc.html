@@ -1,0 +1,217 @@
+<html>
+<head>
+
+<title>Patient Registeration</title>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+<style type="text/css"> label{margin-bottom: 5px;}</style>
+
+        <script type="text/javascript">
+            function validate_rigister () {     
+                
+          var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+          var phone_no=/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/;
+            var name=/^([a-zA-Z]+)$/; 
+             
+             if(document.register.fname.value=="" || name.test(document.register.fname.value)==false)
+              {
+                alert("please fill first name");
+                $(document.register.fname.parentNode).addClass('has-error');
+                return false;
+              }
+              else
+              {
+                 $(document.register.fname.parentNode).removeClass('has-error');
+
+              }
+         if(document.register.lname.value=="" || name.test(document.register.lname.value)==false)
+              {
+                alert("please fill last name");
+                $(document.register.lname.parentNode).addClass('has-error');
+                return false;
+              }
+              else
+              {
+                 $(document.register.lname.parentNode).removeClass('has-error');
+
+              }
+             if(document.register.type_doc.value=="" || name.test(document.register.type_doc.value)==false)
+              {
+                alert("please fill Type name");
+                $(document.register.type_doc.parentNode).addClass('has-error');
+                return false;
+              }
+              else
+              {
+                 $(document.register.type_doc.parentNode).removeClass('has-error');
+
+              }
+                            
+
+           if(document.register.ph1.value=="" || phone_no.test(document.register.ph1.value)==false)
+              {
+                alert("please enter phone no");
+                $(document.register.ph1.parentNode).addClass('has-error');
+                return false;
+              }
+               else
+              {
+                 $(document.register.ph1.parentNode).removeClass('has-error');
+              }
+              
+                if(document.register.ph2.value!="" && phone_no.test(document.register.ph2.value)==false)
+              {
+                alert("please enter correct aleternate phone no");
+                $(document.register.ph2.parentNode).addClass('has-error');
+                return false;
+              }
+               else
+              {
+                 $(document.register.ph2.parentNode).removeClass('has-error');
+              }
+
+              if(document.register.email1.value=="" || filter.test(document.register.email1.value)==false)
+              {
+                alert("please enter valid email id");
+                $(document.register.email1.parentNode).addClass('has-error');
+                return false;
+              }
+               else
+              {
+                 $(document.register.email1.parentNode).removeClass('has-error');
+              }
+
+           if(document.register.add1.value=="")
+              {
+                alert("please fill address");
+                $(document.register.addr1.parentNode).addClass('has-error');
+                return false;
+              }
+               else
+              {
+                 $(document.register.add1.parentNode).removeClass('has-error');
+              }
+         if(document.register.city.value=="")
+              {
+                alert("please fill name");
+                $(document.register.city.parentNode).addClass('has-error');
+                return false;
+              }
+               else
+              {
+                 $(document.register.city.parentNode).removeClass('has-error');
+              }
+         if(document.register.state.value=="")
+              {
+                alert("please fill state name");
+                $(document.register.state.parentNode).addClass('has-error');
+                return false;
+              }
+               else
+              {
+                 $(document.register.state.parentNode).removeClass('has-error');
+              }
+            
+           return true;
+            
+            }
+
+        </script>
+
+
+
+
+
+
+</head>
+
+<body>
+    <div class="container">
+
+<div class="" style="padding-top:40px;">
+    <form role="form"  method="post" name="register" action="../functions/add_doc.php" onsubmit="return validate_rigister();">
+          <div>
+                  <div style="margin-left:50px;">
+                        <div class="form-group col-md-3" style="clear:both;">
+                        <label for="InputName">Name</label>
+                        <input type="text" class="form-control"  placeholder="Enter First Name" style="width:250px" name="fname" required >
+                      </div>
+
+                       
+
+                       <div class="form-group col-md-3" style="clear:both">
+                        
+                        <label for="InputName">Gender</label>
+                        <select class="form-control" name="sex" required>
+                          <option>Select</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            
+                        </select>
+                      </div>
+                      
+                       <div class="form-group col-md-3" style="clear:both" >
+                        <label for="InputEmail"></label>
+                        <input type="text" class="form-control" name="type_doc" required>
+                      </div>
+              </div>
+           </div> 
+           
+           <div style="clear:both">
+
+                  <div style="margin-left:50px"  >
+                      <div class="form-group col-md-3" style="clear:both">
+                          <label for="InputEmail">Institution Address</label>
+                          <textarea type="text" class="form-control"  placeholder="Enter Address" name="add1"></textarea>
+                      </div>
+                      
+                  </div>
+            </div>
+             <div style="clear:both">
+
+                  <div style="margin-left:50px"  >
+                      <div class="form-group col-md-3" >
+                          <label for="InputEmail">City</label>
+                          <input type="text" class="form-control"  placeholder="Enter City" name="city">
+                      </div>
+                      <div class="form-group col-md-3" >
+                          <label for="InputEmail">State</label>
+                          <input type="text" class="form-control" name="state">
+                      </div>
+                  </div>
+            </div>
+             <div style="clear:both">
+                  <div style="margin-left:50px">
+                              <div class="form-group col-md-3"  >
+                            <label for="InputEmail">Phone No.</label>
+                            <input type="text" class="form-control" name="ph1" >
+                        </div>
+                        
+                        <div class="form-group col-md-3">
+                            <label for="InputEmail">Alternate Phone No.</label>
+                            <input type="text" class="form-control" name="ph2">
+                        </div>
+                        
+                        
+                        <div class="form-group col-md-3" style="clear:both">
+                            <label for="InputEmail">Email address</label>
+                            <input type="text" class="form-control"  placeholder="Enter email" name="email1">
+                        </div>
+
+                          
+                  </div>
+            </div>
+           
+                  <div style="margin-left:150px">
+             
+                    <div class="form-group" style="clear:both">
+                        <button type="submit" class="btn btn-primary" value="submit" name="docsubmit" style="clear:both">Submit</button>
+                    </div>
+                  </div>
+    </form>
+  </div>
+</div>
+
+
+</body> 
+</html>

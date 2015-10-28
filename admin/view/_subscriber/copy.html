@@ -1,0 +1,343 @@
+<html>
+<head>
+  <title>Patient Registeration</title>
+  <style type="text/css"> label{margin-bottom: 5px;}</style>
+</head>
+<body>
+    <div class="container">
+
+<div class="" style="padding-top:40px;">
+    <form role="form" class="register" method="post" name="patientAddForm">
+          
+                   <div style="margin-left:50px;">
+                        <div class="form-group col-md-3" style="clear:both;">
+                        <label for="InputName">TB No.</label>
+                        <input type="text" class="form-control" placeholder="Enter TB NO." style="width:250px" name="tb_no"required >
+                      </div>
+
+                        <div class="form-group col-md-3" style="width:250px" >
+                        <label for="InputName">TB Unit</label>
+                        <input type="text" class="form-control" placeholder="Enter TB Unit" name="tb_unit" style="width:250px" required>
+                      </div>
+                      <div class="form-group col-md-3" style="clear:both;">
+                        <label for="InputName">Nikshay No.</label>
+                      <input type="text" class="form-control" placeholder="Nikshay No." name="nikshaya_no" required>
+                      </div>
+
+                        <div class="form-group col-md-3" style="width:250px" >
+                        <label for="InputName"> Name of PHI</label>
+                        <input type="text" class="form-control" placeholder="Name of PHI" name="name_phi" required>
+                      </div>
+                     
+
+                      <div class="form-group col-md-3" style="clear:both;">
+                        <label for="InputName" style="font-size:20px"><u>Personal Details</u></label>
+                      </div>
+ 
+                      <div class="form-group col-md-3" style="clear:both;">
+                        <label for="InputName">Name</label>
+            <input type='text' name='subName' class="form-control" placeholder="Enter Name" class='name text input' maxlength="50" required >     
+                      </div>
+
+                        
+
+                       <div class="form-group col-md-3">
+                        
+                        <label for="InputName">Gender</label>
+                        <select class="form-control" name='subSex' required style="width:150px" required>
+                          <option>Select</option>
+                            <option value='M'>Male</option>
+                            <option value='F'>Female</option>
+                            
+                        </select>
+                      </div>
+                      
+                       <div class="form-group col-md-3" style="clear:both;">
+                        <label for="InputEmail">Date of Birth</label>
+                       <input type="date" name="subDOB" class="dob date input" required>
+                      </div>
+                       <div class="form-group col-md-3"  style="clear:both">
+                        <label for="InputEmail">Education</label>
+                        <select class="form-control" name="subEducation" class='occupation dropdown input' required>
+                          <option value=''>Select Occupation...</option>
+                          <option value='Primary education'>Primary Education</option>
+                          <option value='Secondary Education'>Secondary Education</option>
+                          <option value='Diploma'>Diploma</option>
+                          <option value='Professional degree'>Professional degree</option>
+                        </select>
+                      </div>
+                       <div class="form-group col-md-3"  >
+                        <label for="InputEmail">Occupation</label>
+                        <select class="form-control" name="subOccupation" class='occupation dropdown input' required>
+                        <option value=''>Select Occupation...</option>
+                        <option value='farmer'>Farmer</option>
+                        <option value='bsnsman'>Bussinessman</option>
+                        <option value='shpkpr'>Shopkeeper</option>
+                        <option value='dwagelbr'>Daily Wages Labour</option>
+                        <option value='clerk'>Clerk</option>
+                      </select>
+                      </div>
+              </div>
+           
+           
+           <div style="clear:both">
+
+                  <div style="margin-left:50px"  >
+                      <div class="form-group col-md-3" style="clear:both">
+                          <label for="InputEmail">Present Address</label>
+                          <textarea type="text" class="form-control"  placeholder="Enter Address"  name='subAddress' required></textarea>
+                      </div>
+
+                      
+                  
+          <div class="form-group col-md-3"  >
+                            <label for="InputEmail">Phone No.</label>
+                            <input type='text' name='subContact' class="form-control" class='contact text input' maxlength="10" required>
+                        </div>
+                </div>
+            </div>    
+             <div style="clear:both">
+
+                  <div style="margin-left:50px"  >
+                      <div class="form-group col-md-3" >
+                          <label for="InputEmail">City</label>
+                          <input type="text" class="form-control"  placeholder="Enter City"  name='subCity' required>
+                      </div>
+                      <div class="form-group col-md-3" >
+                          <label for="InputEmail">State</label>
+                          <select name='subState' class='state dropdown input' required>
+                            <option value=''>Select State...</option>
+                            <option value='Kerala'>Kerala</option>
+                          </select>
+                      </div>
+                  </div>
+
+            </div>
+             
+            
+              <div style="margin-left:50px"  >
+             
+                 <div class="form-group col-md-3" style="clear:both;">
+                            <label for="InputName" style="font-size:20px"><u>Contact Person Details</u></label>
+                  </div>
+             </div>
+                  <div style="margin-left:50px"  >
+            
+            <div class="form-group col-md-3" style="clear:both;">
+                        <label for="InputName">Name</label>
+            <input type='text' name='csubName' class="form-control" placeholder="Enter Name" class='name text input' maxlength="50" required>     
+                      </div>
+                     </div>  
+                       <div style="clear:both">
+
+                  <div style="margin-left:50px"  >
+                      <div class="form-group col-md-3" style="clear:both">
+                          <label for="InputEmail">Present Address</label>
+                          <textarea type="text" class="form-control"  placeholder="Enter Address"  name='csubAddress' required></textarea>
+                      </div>
+
+                      
+                  
+          <div class="form-group col-md-3"  >
+                            <label for="InputEmail">Phone No.</label>
+                            <input type='text' name='csubContact' class="form-control" class='contact text input' maxlength="10" required> 
+                        </div>
+                </div>
+            </div>    
+             <div style="clear:both">
+
+                  <div style="margin-left:50px"  >
+                      <div class="form-group col-md-3" >
+                          <label for="InputEmail">City</label>
+                          <input type="text" class="form-control"  placeholder="Enter City"  name='csubCity' required>
+                      </div>
+                      <div class="form-group col-md-3" >
+                          <label for="InputEmail">State</label>
+                          <select name='csubState' class='state dropdown input' required>
+              <option value=''>Select State...</option>
+              <option value='Kerala'>Kerala</option>
+            </select>
+                      </div>
+             
+                <div class="form-group col-md-3" style="clear:both">
+                    <label for="InputEmail">Relationship</label>
+                    <select name='realtionship' class='state dropdown input' required>
+                            <option value=''>Select Relationship...</option>
+                            <option value='None'>None</option>
+                            <option value='Brother'>Brother</option>
+                            <option value='Sister'>Sister</option>
+                            <option value='Cousin'>Cousin</option>
+                          </select>
+                  </div>
+                </div>
+                  </div>
+
+                  <!--dot provider-->   
+
+
+              <div style="margin-left:50px"  >
+             
+                 <div class="form-group col-md-3" style="clear:both;">
+                            <label for="InputName" style="font-size:20px"><u>dot Provider</u></label>
+                  </div>
+        </div>
+                  <div style="margin-left:50px"  >
+            
+            <div class="form-group col-md-3" style="clear:both;">
+                        <label for="InputName">Name</label>
+            <input type='text' name='dsubName' class="form-control" placeholder="Enter Name" class='name text input' maxlength="50" required>     
+                      </div>
+                     </div>  
+                       <div style="clear:both">
+
+                  <div style="margin-left:50px"  >
+                      <div class="form-group col-md-3" style="clear:both">
+                          <label for="InputEmail">Present Address</label>
+                          <textarea type="text" class="form-control"  placeholder="Enter Address"  name='dsubAddress' required></textarea>
+                      </div>
+
+                      
+                  
+          <div class="form-group col-md-3"  >
+                            <label for="InputEmail">Phone No.</label>
+                            <input type='text' name='dsubContact' class="form-control" class='contact text input' maxlength="10" required>
+                        </div>
+                </div>
+            </div>    
+             <div style="clear:both">
+
+                  <div style="margin-left:50px"  >
+                      <div class="form-group col-md-3" >
+                          <label for="InputEmail">City</label>
+                          <input type="text" class="form-control"  placeholder="Enter City"  name='dsubCity' required>
+                      </div>
+                      <div class="form-group col-md-3" >
+                          <label for="InputEmail">State</label>
+                          <select name='dsubState' class='state dropdown input' required>
+              <option value=''>Select State...</option>
+              <option value='Kerala'>Kerala</option>
+            </select>
+                      </div>
+                  </div>
+            </div>
+            <!--Consulting Docter -->   
+
+
+              <div style="margin-left:50px"  >
+             
+                 <div class="form-group col-md-3" style="clear:both;">
+                            <label for="InputName" style="font-size:20px"><u>Consulting Docter</u></label>
+                  </div>
+                <div style="clear:both">
+        
+                   <div class="form-group col-md-3" >
+                          <label for="InputEmail">Name of Docter</label>
+                          <select name='sub_doc' class='state dropdown input' required>
+              <option value=''>Select Id...</option>
+              <option value='DOC0001'>Khurana</option>
+            </select>
+                      </div>
+                  </div>
+
+        </div>
+              <!--MEdical -->   
+
+
+              <div style="margin-left:50px"  >
+             
+                   <div class="form-group col-md-3" style="clear:both;">
+                            
+                            <label for="InputName" style="font-size:20px"><b><u>Medical Details</u></b></label>
+                    </div>
+                    
+                    <div style="clear:both">
+          
+                         
+                        <div class="form-group col-md-3" >
+                              
+                              <label for="InputEmail">Type of Patient</label>
+                              
+                              <select name='sub_type' class='state dropdown input' required>
+                                  <option value=''>Select Type of Patient...</option>
+                                  <option value='New'>New</option>
+                                  <option value='Transfer_in'>Transfer In</option>
+                                  <option value='Treatment_after_lost_to_follow_up'>Treatment after lost to follow up</option>
+                                  <option value='Recurrent'>Recurrent</option>
+                                  <option value='Treatment_after_failure'>Treatment after failure</option>
+                                  <option value='Other'>Other</option>
+                              </select>
+
+                        </div>
+                      </div>
+                    <div style="clear:both">
+
+                        <div class="form-group col-md-3" >
+                              
+                              <label for="InputEmail">Blood Group</label>
+                              
+                              <select name='bg_type' class='state dropdown input' required>
+                                  <option value=''>Select the blood group of Patient...</option>
+                                  <option value='A+'>A+</option>
+                                  <option value='A-'>A-</option>
+                                  <option value='B+'>B+</option>
+                                  <option value='B-'>B-</option>
+                                  <option value='AB+'>AB+</option>
+                                  <option value='AB-'>AB-</option>
+                                  <option value='O+'>O+</option>
+                                  <option value='O-'>O-</option>
+                                  
+                              </select>
+
+                        </div>
+                        <div class="form-group col-md-3"  >
+                              
+                              <label for="InputEmail">HIV</label>
+                              
+                              <select name='hiv' class='state dropdown input' required>
+                                  <option value=''>Select Type...</option>
+                                  <option value='Yes'>Yes </option>
+                                  <option value='No'>No</option>
+                              </select>
+
+                        </div>
+                        </div>
+                      <div style="clear:both">
+                        <div class="form-group col-md-3"  >
+                              
+                              <label for="InputEmail">Phase of Treatment </label>
+                              
+                              <select name='PhaseofTreatment' class='state dropdown input' required>
+                                  <option value=''>Select Type...</option>
+                                  <option value='Intensive'>Intensive </option>
+                                  <option value='Continuation Phase'>Continuation Phase</option>
+                              </select>
+
+                        </div>
+                        <div class="form-group col-md-3" style="clear:both">
+                              
+                              <label for="InputEmail">Diseases Classification</label>
+                              
+                              <select name='DiseasesClassification' class='state dropdown input' required>
+                                  <option value=''>Select Type...</option>
+                                  <option value='Pulmonary'>Pulmonary</option>
+                                  <option value='Extra pulmonary'>Extra pulmonary</option>
+                              </select>
+
+                        </div>
+                    </div>                               
+
+             </div>    
+               
+                  <div style="margin-left:150px">
+             
+                    <div class="form-group" style="clear:both">
+                        <button  class="btn btn-primary" value="submit" name="subsubmit" style="clear:both">Submit </button>
+                    </div>
+                  </div>
+    </form>
+  </div>
+</div>
+
+
+</body> 
+</html>

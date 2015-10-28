@@ -1,0 +1,16 @@
+#clients > div > div > div > div > img
+{
+	width:15%;
+	height:20%;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px)
+{
+	#clients > div > div > div > div > img
+	{
+	width:40%;
+	height:2%;
+	}
+}
