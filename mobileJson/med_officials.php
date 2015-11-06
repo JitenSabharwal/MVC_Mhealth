@@ -5,9 +5,9 @@ include("../classes/database.php");
 	{
 		$db=new Database();
 		$db->connect();
-		$query="select * from med_officials where user_id='".$_GET['user_id']."'";
+		$query="select * from subscribers where user_id='".$_GET['user_id']."'";
 		$result=$db->selectData($query);
-		$result=mysql_fetch_assoc($result);
+		$result=mysqli_fetch_assoc($result);
 		header("Content-type : application/json");
 		echo json_encode($result);
 	}

@@ -1,6 +1,6 @@
 <?php
 	#this script contains the code for verifying the login of admin
-	include("../classes/database.php");
+	include("../model/classes/database.php");
 
 ?>
 <?php
@@ -34,6 +34,14 @@
 				$_SESSION['param1']=$loginQueryResult['user_id'];
 				$_SESSION['param2']=time();
 				echo "sub";
+				//---------Getting name of the subscriber............
+				$db->connect();
+				$query="SELECT * from subscribers where user_id='".$loginQueryResult['user_id']."'";
+				$result=$db->selectData($query);
+				$row = mysqli_fetch_array($result);
+				$db->disconnect();
+				$_SESSION['username']=$row['sub_name'];
+				
 			}
 			else if($loginQueryResult['type_of_user']=='1')
 			{

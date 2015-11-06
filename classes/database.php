@@ -18,12 +18,6 @@
 					$this->host="localhost";
 					$this->user="root";
 					$this->password="";
-					$this->database="mhealth";
-				break;
-				case "www.zerorush.in":
-					$this->host="localhost";
-					$this->user="root";
-					$this->password="haustile";
 					$this->database="mheal";
 				break;
 				case "mhealthsrm.org":

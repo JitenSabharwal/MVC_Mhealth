@@ -7,7 +7,7 @@ include("../classes/database.php");
 		$db->connect();
 		$query="select * from subscribers where user_id='".$_GET['user_id']."'";
 		$result=$db->selectData($query);
-		$result=mysql_fetch_assoc($result);
+		$result=mysqli_fetch_assoc($result);
 		header("Content-type : application/json");
 		echo json_encode($result);
 	}

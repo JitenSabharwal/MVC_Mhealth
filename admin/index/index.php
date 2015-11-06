@@ -21,8 +21,7 @@
 				Get a great health with our website and apps. This is exclusively for the TB patients.
 			</p>
 			<div class="cta animated fadeInDown">
-				<a href="login.html" class="button-outline">Login</a>
-				<a href="signup.html" class="button">Sign up</a>
+				<a href="login.php" class="button-outline ">Login</a>
 			</div>
 			<div class="img"></div>
 		</div>

@@ -38,9 +38,7 @@
 							    		<input type='password' name='loginPassword' maxlength="15"  class="form-control"  placeholder="Enter your password." />
 							  		</div>
 							  		<div class="submit">
-							  			<a href="index.html" class="button-clear">
-								  			<span>Sign in </span>
-								  		</a>
+							  			<input type="submit" class="btn btn-primary">
 							  		</div>
 								</form>
 							</div>

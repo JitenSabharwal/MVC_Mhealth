@@ -1,7 +1,7 @@
 
 <?php
 # For viewing Users Profile
-	require_once("../classes/database.php");
+	require_once("../controller/model/classes/database.php");
 	session_start();
 ?>
 <?php

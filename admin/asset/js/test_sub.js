@@ -1,4 +1,5 @@
 $(document).ready(function(){
+$(".test").click(function(){
 	$(".test").hide();
 	var nikshay_no = prompt("Enter the <b>Nikshay Number</b> of the patient");
 
@@ -49,4 +50,5 @@ $(document).ready(function(){
 				}			
 		});
 	});
+});
 });

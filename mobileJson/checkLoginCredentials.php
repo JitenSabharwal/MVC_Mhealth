@@ -7,7 +7,7 @@ if(isset($_POST['user_id']) && isset($_POST['password']))
 	$db->connect();
 	$query="select user_id,password from users where user_id='".$_POST['user_id']."' and password='".md5($_POST['password'])."'";
 	$checkLoginStatus=$db->selectData($query);
-	if(mysql_num_rows($checkLoginStatus)==0)
+	if(mysqli_num_rows($checkLoginStatus)==0)
 		$result['code']="0";
 	else
 		$result['code']="1";
