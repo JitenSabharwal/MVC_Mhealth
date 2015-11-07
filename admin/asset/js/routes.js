@@ -17,11 +17,11 @@ $(document).ready(function(){
 	//Tests
 	// ---  Sputum --------
 	$(".sputum").click(function(){
-		$(".responseHolder").load("../diagnostic_test/sputum_test.html");			
+		$(".responseHolder").load("../diagnostic_test/sputum_test.php");			
 	});
 	// -----  Xray -------
 	$(".xray").click(function(){
-		$(".responseHolder").load("../diagnostic_test/xray_test.html");			
+		$(".responseHolder").load("../diagnostic_test/xray_test.php");			
 	});
 //-------------- Subscriber Page-------------------
 	//

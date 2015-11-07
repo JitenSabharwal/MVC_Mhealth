@@ -1,6 +1,5 @@
 $(document).ready(function(){
 $(".test").click(function(){
-	$(".test").hide();
 	var nikshay_no = prompt("Enter the <b>Nikshay Number</b> of the patient");
 
 	if(nikshay_no != "")
@@ -8,19 +7,19 @@ $(".test").click(function(){
 		$.ajax({
 				type : "Post" ,
 				data : {nikshay_no : nikshay_no} ,
-				url  : "./functions/search_patient.php" ,
+				url  : "../controller/functions/search_patient.php" ,
 				success: function(data){
 								if(data == "0")
 								{
 									alert("Enter the correct Nikshay Number....");
 								}
+								else
+									alert(data);
 					
 							},
-				error : function()
+				error : function(data)
 						{
-							alert("data")
-							alert("Server 404 error");
-							document.write("Server 404 error");
+							alert(data);
 						}			  
 		}); 	
 	}
@@ -28,12 +27,13 @@ $(".test").click(function(){
 	{
 		alert("Enter the Nikshay Number!");
 	}
-	$(".test").submit(function(){
+	
+	$(".submittest").submit(function(){
 		alert($(this).serialize());
 		$.ajax({
 			Type : "Post" ,
 			Data : $(this).serialize() ,
-			url  : "./functions/test.php" ,
+			url  : "../controller/functions/test.php" ,
 			success : function(data){
 							if(data == "1")
 							{
@@ -41,12 +41,12 @@ $(".test").click(function(){
 							}
 							else
 							{
-								alert("Server 404 error");
+								alert(data);
 							}	
 						} ,
-			error : function(){
-					alert("Server 404 error");
-					document.write("Server 404 error");
+			error : function(data){
+					alert(data);
+					//document.write("Server 404 error");
 				}			
 		});
 	});

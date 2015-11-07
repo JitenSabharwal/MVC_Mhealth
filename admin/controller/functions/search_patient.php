@@ -1,7 +1,7 @@
 <?php
 # To find the patient---
-	require_once("../classes/retrieval.php");
-	require_once("../classes/database.php");
+	require_once("../model/classes/retrieval.php");
+	require_once("../model/classes/database.php");
 
 	if(isset($_POST['nikshay_no']))
 	{
@@ -19,11 +19,10 @@
 				session_start();
 
 				$_SESSION['sub_name'] = $row['sub_name'];
-				$_SESSION['nikshay_no'] = $row['Nikshay_no']; 
-			}
-			$row=mysqli_fetch_array($result);
-			echo json_encode($row);
+				$_SESSION['nikshay_no'] = $row['Nikshay_no'];
+				$_SESSION['tb_no'] = $row['TB_no'];
 
+			}
 		}
 		else
 		{
@@ -32,5 +31,4 @@
 		
 		$db->disconnect(); 
 	}
-	echo "reached";
 ?>

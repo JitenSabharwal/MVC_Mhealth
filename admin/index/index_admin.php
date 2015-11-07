@@ -56,8 +56,8 @@ else
           					Test<b class="caret"></b>
           				</a>
           				<ul class="dropdown-menu">
-							<li><a href="#" class="sputum">Lab Sputum Test</a></li>
-							<li><a href="#" class="xray">Lab Xray Test</a></li>
+							<li><a href="#" class="sputum test">Lab Sputum Test</a></li>
+							<li><a href="#" class="xray test">Lab Xray Test</a></li>
 				        </ul>
         			</li>
         			<li class="dropdown">
