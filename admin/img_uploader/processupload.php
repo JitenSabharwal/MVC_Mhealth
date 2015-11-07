@@ -1,5 +1,9 @@
 <?php
 ############ Configuration ##############
+session_start();
+require_once("../controller/model/classes/database.php");
+$db=new database();
+$db->connect();
 $thumb_square_size 		= 200; //Thumbnails will be cropped to 200x200 pixels
 $max_image_size 		= 500; //Maximum image size (height and width)
 $thumb_prefix			= "thumb_"; //Normal thumb Prefix
@@ -73,6 +77,19 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
 			echo '<br />';
 			echo '<img src="'.$destination_folder_1. $new_file_name.'" alt="Resized Image">';
 			echo '</div>';
+			if($_SESSION['image_type']=="profile")
+			{
+				$query="UPDATE subscribers set image_path='".$thumb_prefix . $new_file_name."' where user_id='".$_SESSION['image_user']."'";
+				
+				$db->insertData($query);
+
+			}
+			else if($_SESSION['image_type']=="test")
+			{
+				$query="UPDATE tests set image='".$thumb_prefix . $new_file_name."' where user_id='".$_SESSION['image_user']."'";
+
+				$db->insertData($query);
+			}
 		}
 		
 		imagedestroy($image_res); //freeup memory
@@ -101,6 +118,7 @@ function normal_resize_image($source, $destination, $image_type, $max_size, $ima
 	//Copy and resize part of an image with resampling
 	if(imagecopyresampled($new_canvas, $source, 0, 0, 0, 0, $new_width, $new_height, $image_width, $image_height)){
 		save_image($new_canvas, $destination, $image_type, $quality); //save resized image
+
 	}
 
 	return true;

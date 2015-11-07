@@ -13,12 +13,13 @@ $(document).ready(function(){
 							case "lab" : window.open("../index/index_lab.php","_self");
 											break;
 							case "sub" :window.open("../index/index_sub.php","_self");
-										break;
-							case "admin":window.open("../index/index.php","_self");
+											break;
+							case "admin" :window.open("../index/index_admin.php","_self");
+											alert("admin");
+											break;
 
-							default: alert("Incoorect username and password");			 				
 						}
-							//alert("Enter Correct username & password");
+							
 					} ,
 			error: function(){
 				alert("Error");

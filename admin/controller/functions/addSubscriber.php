@@ -1,10 +1,9 @@
 <?php #this script add the subscriber details in database
 	session_start();
-	require_once("../classes/database.php");
-	require_once("../classes/retrieval.php");
+	require_once("../model/classes/database.php");
+	require_once("../model/classes/retrieval.php");
 ?> 
 <?php
-	echo $_REQUEST['tb_no']." Hello!!!..";
 	if(isset($_POST['subName']))
 	{
 		$TB_no=$_REQUEST['tb_no'];
@@ -70,8 +69,9 @@
 			}
 			else
 			{
-				$query="INSERT INTO subscribers (user_id , contact_person_id, dot_id , doc_id ,TB_no,TB_unit,Nikshay_no,Name_phi,sub_name,sub_sex,sub_DOB,sub_occupation,sub_contact,sub_address,sub_city,sub_state,sub_type,sub_blood_group) 
-						VALUES ('$sub_id','$con_id','$dot_id','$doc_id','$TB_no','$TB_unit','$Nikshay_no','$Name_phi','$subName','$subSex','$subDOB','$subOccupation','$subContact','$subAddress','$subCity','$subState','$sub_type','$sub_BloodGroup')";
+				$query="INSERT INTO subscribers (user_id , contact_person_id, dot_id , doc_id ,TB_no ,TB_unit ,Nikshay_no ,Name_phi ,sub_name ,sub_sex ,sub_DOB ,sub_occupation ,sub_contact ,sub_address ,sub_city ,sub_state ,sub_type ,sub_blood_group )  
+					VALUES ( '$sub_id' , '$con_id' , '$dot_id' , '$doc_id' , '$TB_no' , '$TB_unit' , '$Nikshay_no' , '$Name_phi' , '$subName' , '$subSex' ,'$subDOB','$subOccupation','$subContact','$subAddress','$subCity','$subState','$sub_type','$sub_BloodGroup')";
+				
 				if(empty($db->insertData($query)))
 					{
 						echo "Error in user";
@@ -83,6 +83,8 @@
 						$db->insertData($query);	
 						$_SESSION['image']=$Nikshay_no;
 						$_SESSION['image_path']="uploads/subscriber/";
+						$_SESSION['image_type']="profile";
+						$_SESSION['image_user']=$sub_id;
 					}		
 			}
 			$db->disconnect();

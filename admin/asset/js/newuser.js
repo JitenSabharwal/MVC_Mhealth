@@ -6,12 +6,12 @@ $(document).ready(function(){
 		//alert(new FormData(this));
 		$.ajax({
 			type : "Post",
-			url  : "./functions/addSubscriber.php" ,
+			url  : "../controller/functions/addSubscriber.php" ,
 			data : 	$(this).serialize() ,
 			success : function(data)
 					  {
-					  		alert(data);
-					  		//condition to be placed here
+					  		
+					  		if(data=="")
 					  		{
 					  			window.open("../img_uploader");
 					  		}	
