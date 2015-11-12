@@ -26,6 +26,12 @@
 					$this->password="jiten";
 					$this->database="mheal";
 				break;
+				case "mhealthsrm.org":
+					$this->host="localhost";
+					$this->user="jiten";
+					$this->password="jiten";
+					$this->database="mheal";
+				break;
 				
 			}
 		}
