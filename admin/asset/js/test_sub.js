@@ -28,16 +28,20 @@ $(".test").click(function(){
 		alert("Enter the Nikshay Number!");
 	}
 	
-	$(".submittest").submit(function(){
+	
+});
+$(".sputum_test").submit(function(){
+		event.preventDefault();
 		alert($(this).serialize());
+		console.log($(this).serialize());
 		$.ajax({
 			Type : "Post" ,
 			Data : $(this).serialize() ,
-			url  : "../controller/functions/test.php" ,
+			url  : "../controller/functions/lab_sputum.php" ,
 			success : function(data){
 							if(data == "1")
 							{
-								alert("Test Results Submitted");
+					  			window.open("../img_uploader");
 							}
 							else
 							{
@@ -46,9 +50,29 @@ $(".test").click(function(){
 						} ,
 			error : function(data){
 					alert(data);
-					//document.write("Server 404 error");
 				}			
 		});
 	});
-});
+$(".xray_test").submit(function(){
+		event.preventDefault();
+		console.log($(this).serialize());
+		$.ajax({
+			Type : "Post" ,
+			Data : $(this).serialize() ,
+			url  : "../controller/functions/lab_xray.php" ,
+			success : function(data){
+							if(data == "1")
+							{
+					  			window.open("../img_uploader");
+							}
+							else
+							{
+								alert(data);
+							}	
+						} ,
+			error : function(data){
+					alert(data);
+				}			
+		});
+	});
 });
