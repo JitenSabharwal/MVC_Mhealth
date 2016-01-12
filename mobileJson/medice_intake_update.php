@@ -13,9 +13,9 @@
 		$db= new Database();
 		$db->connect();
 		if(!empty($db->insertData($query)))
-				echo true;
+				echo "1";
 		else
-				echo false;
+				echo "0";
 		$db->disconnect();
 	}
 ?>
