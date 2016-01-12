@@ -17,6 +17,5 @@
 		else
 				echo false;
 		$db->disconnect();
-
 	}
 ?>

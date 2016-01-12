@@ -14,7 +14,7 @@
 		{
 			switch($_SERVER['HTTP_HOST'])
 			{
-				case "localhost:60":
+				case "localhost":
 					$this->host="localhost";
 					$this->user="root";
 					$this->password="";
