@@ -1,13 +1,11 @@
-
 <?php
 # For viewing Users Profile
 	require_once("../controller/model/classes/database.php");
-	session_start();
 ?>
 <?php
 	$db = new Database();
 	$db->connect();
-	$user = $_SESSION['param1'];
+	$user = $_SESSION['user_id'];
 	$query = "SELECT * FROM subscribers where user_id ='$user'";
 
 	$result=$db->selectData($query);

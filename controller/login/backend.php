@@ -1,7 +1,5 @@
 <?php
-	session_start();
 	include_once("../../asset/classes/database.php");
-	
 ?>
 <?php
 	$result = array(
@@ -12,19 +10,34 @@
 	$mode =@$_REQUEST['mode'];
 	switch($mode)
 	{
-		case "login":
-			if (isset($_REQUEST['user']) && $_REQUEST['user'] != null )//for the logging in the user 
+		case "LOGIN":
+			if (isset($_REQUEST['username']) && $_REQUEST['username'] != null )//for the logging in the user 
 			{
 				$result = login();
 			}	
 		break;
 		//To check whether the person logged in correct or not
+		case "REGISTER":
+				$db=new Database();
+				$db->connect();
+				$name = $_REQUEST['name'];
+				$email = $_REQUEST['email'];
+				$contact = $_REQUEST['contact'];
+				$password = md5(trim($_REQUEST['password']));
+				$sql = "INSERT INTO `user`(`name`,`email`,`contact`,`password`) VALUES('$name','$email','$contact','$password')";
+				$insert = $db->execute($sql);
+				$result = array(
+								"status" => 1 ,
+								"css"	 => "alert alert-success" ,
+								"msg"	 => "Youre are successfully Registered"
+							  );
+		break;	
 		case "login_verification":
-			if(isset($_SESSION['user']) && $_SESSION['user'] != '' && $_SESSION['user'] != null)
+			if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != '' && $_SESSION['user_id'] != null)
 			{
 				$db=new Database();
 				$db->connect();
-				$checkLoginQuery="SELECT * from users where user_id='".$_SESSION['param1']."'";
+				$checkLoginQuery="SELECT * from users where user_id='".$_SESSION['user_id']."'";
 				$checkLoginQueryResult=$db->execute($checkLoginQuery);							//verifying if the session made still exist or not
 				if(mysqli_num_rows($checkLoginQueryResult)==1)
 				{
@@ -37,13 +50,12 @@
 			}
 		break;
 		case "logout":
-			$_SESSION['user'] = null;
+			$_SESSION['user_id'] = null;
 			$result = array(
 								"status" => 1 ,
 								"css"	 => "alert alert-success" ,
 								"msg"	 => "Youre are successfully logged out"
 							  );
-			#session_destroy();
 		break;
 	}
 	echo json_encode($result);
@@ -55,52 +67,31 @@ function login()
 	$data = array(
 			"status" => 1,
 			"css"	 => "alert alert-success",
-			"msg"	 => "Log-in Successfully",
-			"user_type" => ""
+			"msg"	 => "Log-in Successfully"
 			);
+	$userId = trim($_REQUEST['username']);
+	$password=md5(trim($_REQUEST['password']));
+
+	$sql="SELECT * from users where email='".$userId."' and password='".$password."'";
+
 	$db= new Database();
 	$db->connect();
-	$userId=$_POST['loginUserId'];
-	$password=md5($_POST['loginPassword']);
-	
-	$slq="SELECT * from users where user_id='".$userId."' and password='".$password."'";
-	$sql_result=$db->execute($sql);
+	$sql_result=mysqli_fetch_assoc($db->execute($sql));
 	$db->disconnect();
-	
-	if(mysqli_num_rows($sql_result)>0)
-	{
-		$_SESSION['user']=$sql_result['user_id'];
+
+	if(!empty($sql_result))
+	{	
+		$_SESSION['user_id']=$sql_result['user_id'];
 		$_SESSION['time']=time();
-			
-		$sql_result=mysqli_fetch_assoc($sql_result);
-		if($sql_result['type_of_user']=='0')
-		{
-			$data["user_type"] = "admin";
-		}
-		else if($sql_result['type_of_user']=='2')
-		{
-			$data["user_type"] = "sub";
-			
-		}	//---------Getting name of the subscriber............
-		else if($sql_result['type_of_user']=='1')
-		{
-			$data["user_type"] = "lab";
-		}
 	}
 	else
 	{
 		$data = array(
 			"status" => 0,
 			"css"	 => "alert alert-danger",
-			"msg"	 => "Log-in Unsuccessfully",
-			"user_type" => ""
+			"msg"	 => "Log-in Unsuccessfully"
 			);
 	}	
 	return $data;
 }
-// $query="SELECT * from subscribers where user_id='".$sql_result['user_id']."'";
-// 			$sql_result=$db->selectData($query);
-// 			$row = mysqli_fetch_array($sql_result);
-// 			$_SESSION['username']=$row['sub_name'];
-
 ?>

@@ -16,7 +16,6 @@
 		{	
 			while($row=mysqli_fetch_array($result))
 			{
-				session_start();
 
 				$_SESSION['sub_name'] = $row['sub_name'];
 				$_SESSION['nikshay_no'] = $row['Nikshay_no'];

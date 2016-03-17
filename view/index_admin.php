@@ -55,8 +55,8 @@ else
           					Test<b class="caret"></b>
           				</a>
           				<ul class="dropdown-menu">
-							<li><a href="#" class="sputum test">Lab Sputum Test</a></li>
-							<li><a href="#" class="xray test">Lab Xray Test</a></li>
+							<li><a href="#" class="sputum_test">Lab Sputum Test</a></li>
+							<li><a href="#" class="xraytest">Lab Xray Test</a></li>
 				        </ul>
         			</li>
         			<li class="dropdown">
@@ -85,47 +85,47 @@ else
     		</nav>
   		</div>
 	</header>
-  <div class="responseHolder">
+  <div class="">
           <!--TEST-->
           <!--Sputum Test-->
-          <div class="sputum_test_wrapper hidden" style="margin-left:50px;">
+          <div class="sputum_test_wrapper hidden responseHolder" style="margin-left:50px;">
                 <h2><u>Sputum Lab</u></h2>
                 <form role="form" class="suptum_test"  method="post"  name="sputum">
-                        <div class="form-group col-md-3" style="clear:both;">
+                        <div class="form-group " style="clear:both;">
                         <label for="InputName">TB No.:</label>
                         <?php echo @$_SESSION['tb_no'];?>
                       </div>
 
-                      <div class="form-group col-md-3" style="clear:both;">
+                      <div class="form-group " style="clear:both;">
                         <label for="InputName">Nikshay No. : </label>
                         <?php echo @$_SESSION['nikshay_no'];?>
                       </div>
   
-                        <div class="form-group col-md-3" style="clear:both;" >
+                        <div class="form-group " style="clear:both;" >
                         <label for="InputName">Paitent Name : </label>
                         <strong style="text-transform:capitalize"><?php echo @$_SESSION['sub_name'];?></strong>
                        </div>
                       <div style="clear:both;">
-                      <div class="form-group col-md-3" style="clear:both;" >
+                      <div class="form-group " style="clear:both;" >
                         <label for="InputName">Date of Test</label>
                         <input type="date" class="form-control" placeholder="Name of PHI" name="date_of_test" required>
                       </div>
                       </div>
-                      <div class="form-group col-md-3" style="clear:both;" >
+                      <div class="form-group " style="clear:both;" >
                         <label for="InputName">Lab No : </label>
                         <input type="text" class="form-control" placeholder="Lab No." name="lab_no" required>
                       </div>
                       
-                      <div class="form-group col-md-3" style="clear:both;" >
+                      <div class="form-group " style="clear:both;" >
                         <label for="InputName">DMC : Add the photo when you submit </label>
                       </div>
                      
-                      <div class="form-group col-md-3" style="clear:both;" >
+                      <div class="form-group " style="clear:both;" >
                         <label for="InputName">Result : </label>
                         <input type="text" class="form-control" placeholder="Results" name="result" required>
                       </div>
                       
-                      <div class="form-group col-md-3" style="clear:both;" >
+                      <div class="form-group " style="clear:both;" >
                         <label for="InputName">Weight : </label>
                         <input type="text" class="form-control" placeholder="Weight in kg" name="weight" required>
                       </div>
@@ -136,92 +136,91 @@ else
           </div>
           
           <!--Xray Test-->
-          <div class="xray_test_wrapper hidden" style="margin-left:50px;">
+          <div class="xray_test_wrapper hidden responseHolder" style="margin-left:50px;">
             <h2><u>Xray Lab</u></h2>
               <form role="form" class="xray_test"  method="post"  name="xray">
-                     <div class="form-group col-md-3" style="clear:both;">
+                   <div class="form-group " style="clear:both;">
                         <label for="InputName">TB No.:</label>
                         <strong id="xray_tb_no"></strong>
                     </div>
 
-                    <div class="form-group col-md-3" style="clear:both;">
+                    <div class="form-group " style="clear:both;">
                       <label for="InputName">Nikshay No. : </label>
                         <strong id="xray_nik_no"></strong>
                     </div>
 
-                    <div class="form-group col-md-3" style="clear:both;" >
+                    <div class="form-group " style="clear:both;" >
                         <label for="InputName">Paitent Name : </label>
                         <strong class="xray_subname"style="text-transform:capitalize">
                         </strong>
-                   </div>
-                   <div style="clear:both;">
+                    </div>
+                    <div style="clear:both;">
                       <div class="form-group col-md-2" style="clear:both;" >
                         <label for="InputName">Date of Test</label>
                         <input type="date" class="form-control" placeholder="Click to Enter the Date of the test" name="date_of_test" required>
                       </div>
-                   </div>
-                  <div class="form-group col-md-3" style="clear:both;" >
-                    <label for="InputName">Lab No : </label>
-                    <input type="text" class="form-control" placeholder="Lab No." name="lab_no" required>
-                  </div>
+                    </div>
+                    <div class="form-group " style="clear:both;" >
+                      <label for="InputName">Lab No : </label>
+                      <input type="text" class="form-control" placeholder="Lab No." name="lab_no" required>
+                    </div>
                   
-                  <div class="form-group" style="clear:both;" >
-                    <label for="InputName" class="col-sm-1" > Xray :</label>
-                    <input type="file" name="diy_doc_file" id="upload_diy_doc_file" class="col-sm-2"/>
-                  </div>
-                 
-                  <div class="form-group col-md-3" style="clear:both;" >
-                    <label for="InputName">Result : </label>
-                    <input type="text" class="form-control" placeholder="Results" name="result" required>
-                  </div>
-                  
-                  <div class="form-group col-sm-2" style="clear:both;" >
-                    <label for="InputName" >Weight : </label>
-                    <input type="Number" min=0 class="form-control " placeholder="Weight in kg" name="weight" required>
-                  </div>
-                  <div class="form-group col-sm-3" style="clear:both">
-                    <input type="submit" class="btn btn-primary" value="dmc" name="subsubmit">
-                  </div>
-            </form>        
+                    <div class="form-group" style="clear:both;" >
+                      <label for="InputName" class="col-sm-1" > Xray :</label>
+                      <input type="file" name="diy_doc_file" id="upload_diy_doc_file" class="col-sm-2"/>
+                    </div>
+                   
+                    <div class="form-group " style="clear:both;" >
+                      <label for="InputName">Result : </label>
+                      <input type="file" class="form-control" name="result_media" required>
+                    </div>
+                    
+                    <div class="form-group col-sm-2" style="clear:both;" >
+                      <label for="InputName" >Weight : </label>
+                      <input type="Number" min=0 class="form-control " placeholder="Weight in kg" name="weight" required>
+                    </div>
+                    <div class="form-group col-sm-3" style="clear:both">
+                      <input type="submit" class="btn btn-primary" value="dmc" name="subsubmit">
+                    </div>
+              </form>        
           </div>
           <!--End TEST-->
           <!--New Subscruber form-->
-              <div class="subscriber_wrapper hidden">
-                    <h2 style="margin-left:50px;"><u>New Subscriber</u></h2>
-                      
-                      <form role="form" class="register" method="post" name="patientAddForm">
+              <div class="subscriber_wrapper hidden responseHolder ">
+                      <center>
+                      <h2>New Subscriber<hr/></h2>
+                      </center>
+                      <form role="form" class="register col-sm-6 col-sm-offset-4" method="post" name="patientAddForm">
                              
-                          <div style="margin-left:50px;">
-                                <div class="form-group col-md-3" style="clear:both;">
+                              <div class="form-group col-sm-5">
                                 <label for="InputName">TB No.</label>
-                                <input type="text" class="form-control" placeholder="Enter TB NO." style="width:250px" name="tb_no">
+                                <input type="text" class="form-control" placeholder="Enter TB NO."  name="tb_no">
+                               </div>
+                               <div class="form-group  col-sm-5"> 
+                                <label for="InputName">TB Unit</label>
+                                <input type="text" class="form-control" placeholder="Enter TB Unit" name="tb_unit"  >
                               </div>
-
-                                <div class="form-group col-md-3" style="width:200px" >
-                                  <label for="InputName">TB Unit</label>
-                                  <input type="text" class="form-control" placeholder="Enter TB Unit" name="tb_unit" style="width:250px" >
-                                </div>
-                              <div class="form-group col-md-3" style="clear:both;">
+                              <div class="form-group col-sm-5" >
                                 <label for="InputName">Nikshay No.</label>
                                 <input type="text" class="form-control" placeholder="Nikshay No." name="nikshaya_no" >
                               </div>
 
-                              <div class="form-group col-md-3" style="width:250px" >
+                              <div class="form-group col-sm-5" >
                                   <label for="InputName"> Name of PHI</label>
                                   <input type="text" class="form-control" placeholder="Name of PHI" name="name_phi" >
                               </div>
                              
 
-                              <div class="form-group col-md-3" style="clear:both;">
+                              <div class="form-group " style="clear:both;">
                                 <label for="InputName" style="font-size:20px"><u>Personal Details</u></label>
                               </div>
          
-                              <div class="form-group col-md-3" style="clear:both;">
+                              <div class="form-group " style="clear:both;">
                                 <label for="InputName">Name</label>
                                 <input type='text' name='subName' class="form-control" placeholder="Enter Name" class='name text input' maxlength="50"  >     
                               </div>
 
-                               <div class="form-group col-md-3">
+                               <div class="form-group ">
                                 
                                   <label for="InputName">Gender</label>
                                   <select class="form-control" name='subSex'  style="width:150px" >
@@ -232,11 +231,11 @@ else
                                   </select>
                               </div>
                               
-                               <div class="form-group col-md-3" style="clear:both;">
+                               <div class="form-group " style="clear:both;">
                                   <label for="InputEmail">Date of Birth</label>
                                   <input type="date" name="subDOB" class="dob date input" >
                               </div>
-                              <div class="form-group col-md-3"  style="clear:both">
+                              <div class="form-group "  style="clear:both">
                                 <label for="InputEmail">Education</label>
                                 <select class="form-control" name="subEducation" class='occupation dropdown input' >
                                   <option value=''>Select Occupation...</option>
@@ -246,7 +245,7 @@ else
                                   <option value='Professional degree'>Professional degree</option>
                                 </select>
                               </div>
-                               <div class="form-group col-md-3"  >
+                               <div class="form-group "  >
                                     <label for="InputEmail">Occupation</label>
                                     <select class="form-control" name="subOccupation" class='occupation dropdown input' >
                                       <option value=''>Select Occupation...</option>
@@ -257,53 +256,45 @@ else
                                       <option value='clerk'>Clerk</option>
                                   </select>
                                 </div>
-                        </div>
                      
                      
-                         <div style="clear:both">
 
-                                <div style="margin-left:50px"  >
-                                    <div class="form-group col-md-3" style="clear:both">
-                                        <label for="InputEmail">Present Address</label>
-                                        <textarea type="text" class="form-control"  placeholder="Enter Address"  name='subAddress' ></textarea>
-                                    </div>
+                                  <div class="form-group " style="clear:both">
+                                      <label for="InputEmail">Present Address</label>
+                                      <textarea type="text" class="form-control"  placeholder="Enter Address"  name='subAddress' ></textarea>
+                                  </div>
 
-                                    
-                                
-                        <div class="form-group col-md-3"  >
-                                          <label for="InputEmail">Phone No.</label>
-                                          <input type='text' name='subContact' class="form-control" class='contact text input' maxlength="10" >
-                                      </div>
-                              </div>
-                          </div>    
-                           <div style="clear:both">
+                                  
+                              
+                                  <div class="form-group "  >
+                                        <label for="InputEmail">Phone No.</label>
+                                        <input type='text' name='subContact' class="form-control" class='contact text input' maxlength="10" >
+                                  </div>
+                          
 
-                          <div style="margin-left:50px"  >
-                              <div class="form-group col-md-3" >
+                              <div class="form-group " >
                                   <label for="InputEmail">City</label>
                                   <input type="text" class="form-control"  placeholder="Enter City"  name='subCity' >
                               </div>
-                              <div class="form-group col-md-3" >
+                              <div class="form-group " >
                                   <label for="InputEmail">State</label>
                                   <select name='subState' class='state dropdown input form-control' >
                                     <option value=''>Select State...</option>
                                     <option value='Kerala'>Kerala</option>
                                   </select>
                               </div>
-                          </div>
 
-                    </div>
                      
                     
                       <div style="margin-left:50px"  >
                      
-                         <div class="form-group col-md-3" style="clear:both;">
+                         <div class="form-group " style="clear:both;">
                                     <label for="InputName" style="font-size:20px"><u>Contact Person Details</u></label>
                           </div>
                      </div>
                           <div style="margin-left:50px"  >
                     
-                    <div class="form-group col-md-3" style="clear:both;">
+                    <div class="form-group " style="clear:both;">
                                 <label for="InputName">Name</label>
                     <input type='text' name='csubName' class="form-control" placeholder="Enter Name" class='name text input' maxlength="50" >     
                               </div>
@@ -311,27 +302,27 @@ else
                                <div style="clear:both">
 
                           <div style="margin-left:50px"  >
-                              <div class="form-group col-md-3" style="clear:both">
+                              <div class="form-group " style="clear:both">
                                   <label for="InputEmail">Present Address</label>
                                   <textarea type="text" class="form-control"  placeholder="Enter Address"  name='csubAddress' ></textarea>
                               </div>
 
                               
                           
-                  <div class="form-group col-md-3"  >
+                  <div class="form-group "  >
                                     <label for="InputEmail">Phone No.</label>
                                     <input type='text' name='csubContact' class="form-control" class='contact text input' maxlength="10" > 
-                                </div>
+                  </div>
                         </div>
                     </div>    
                      <div style="clear:both">
 
                           <div style="margin-left:50px"  >
-                              <div class="form-group col-md-3" >
+                              <div class="form-group " >
                                   <label for="InputEmail">City</label>
                                   <input type="text" class="form-control"  placeholder="Enter City"  name='csubCity' >
                               </div>
-                              <div class="form-group col-md-3" >
+                              <div class="form-group " >
                                   <label for="InputEmail">State</label>
                                   <select name='csubState' class='state dropdown input form-control' >
                       <option value=''>Select State...</option>
@@ -339,7 +330,7 @@ else
                     </select>
                               </div>
                      
-                        <div class="form-group col-md-3" style="clear:both">
+                        <div class="form-group " style="clear:both">
                             <label for="InputEmail">Relationship</label>
                             <select name='realtionship' class='state dropdown input form-control' >
                                     <option value=''>Select Relationship...</option>
@@ -357,13 +348,13 @@ else
 
                       <div style="margin-left:50px"  >
                      
-                         <div class="form-group col-md-3" style="clear:both;">
+                         <div class="form-group " style="clear:both;">
                                     <label for="InputName" style="font-size:20px"><u>dot Provider</u></label>
                           </div>
                 </div>
                           <div style="margin-left:50px"  >
                     
-                    <div class="form-group col-md-3" style="clear:both;">
+                    <div class="form-group " style="clear:both;">
                                 <label for="InputName">Name</label>
                     <input type='text' name='dsubName' class="form-control" placeholder="Enter Name" class='name text input' maxlength="50" >     
                               </div>
@@ -371,14 +362,14 @@ else
                                <div style="clear:both">
 
                           <div style="margin-left:50px"  >
-                              <div class="form-group col-md-3" style="clear:both">
+                              <div class="form-group " style="clear:both">
                                   <label for="InputEmail">Present Address</label>
                                   <textarea type="text" class="form-control"  placeholder="Enter Address"  name='dsubAddress' ></textarea>
                               </div>
 
                               
                           
-                  <div class="form-group col-md-3"  >
+                  <div class="form-group "  >
                                     <label for="InputEmail">Phone No.</label>
                                     <input type='text' name='dsubContact' class="form-control" class='contact text input' maxlength="10" >
                                 </div>
@@ -387,11 +378,11 @@ else
                      <div style="clear:both">
 
                           <div style="margin-left:50px"  >
-                              <div class="form-group col-md-3" >
+                              <div class="form-group " >
                                   <label for="InputEmail">City</label>
                                   <input type="text" class="form-control"  placeholder="Enter City"  name='dsubCity' >
                               </div>
-                              <div class="form-group col-md-3" >
+                              <div class="form-group " >
                                   <label for="InputEmail">State</label>
                                   <select name='dsubState' class='state dropdown input form-control' >
                       <option value=''>Select State...</option>
@@ -405,12 +396,12 @@ else
 
                       <div style="margin-left:50px"  >
                      
-                         <div class="form-group col-md-3" style="clear:both;">
+                         <div class="form-group " style="clear:both;">
                                     <label for="InputName" style="font-size:20px"><u>Consulting Docter</u></label>
                           </div>
                         <div style="clear:both">
                 
-                           <div class="form-group col-md-3" >
+                           <div class="form-group " >
                                   <label for="InputEmail">Name of Docter</label>
                                   <select name='sub_doc' class='state dropdown input form-control' >
                       <option value=''>Select Id...</option>
@@ -425,7 +416,7 @@ else
 
                       <div style="margin-left:50px"  >
                      
-                           <div class="form-group col-md-3" style="clear:both;">
+                           <div class="form-group " style="clear:both;">
                                     
                                     <label for="InputName" style="font-size:20px"><b><u>Medical Details</u></b></label>
                             </div>
@@ -433,7 +424,7 @@ else
                             <div style="clear:both">
                   
                                  
-                                <div class="form-group col-md-3" >
+                                <div class="form-group " >
                                       
                                       <label for="InputEmail">Type of Patient</label>
                                       
@@ -451,7 +442,7 @@ else
                               </div>
                             <div style="clear:both">
 
-                                <div class="form-group col-md-3" >
+                                <div class="form-group " >
                                       
                                       <label for="InputEmail">Blood Group</label>
                                       
@@ -469,7 +460,7 @@ else
                                       </select>
 
                                 </div>
-                                <div class="form-group col-md-3"  >
+                                <div class="form-group "  >
                                       
                                       <label for="InputEmail">HIV</label>
                                       
@@ -482,7 +473,7 @@ else
                                 </div>
                                 </div>
                               <div style="clear:both">
-                                <div class="form-group col-md-3"  >
+                                <div class="form-group "  >
                                       
                                       <label for="InputEmail">Phase of Treatment </label>
                                       
@@ -493,7 +484,7 @@ else
                                       </select>
 
                                 </div>
-                                <div class="form-group col-md-3" style="clear:both">
+                                <div class="form-group " style="clear:both">
                                       
                                       <label for="InputEmail">Diseases Classification</label>
                                       

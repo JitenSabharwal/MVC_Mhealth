@@ -7,7 +7,7 @@
 	<title>mPower</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	  <?php 
-	  		include "../MVC_Mhealth/asset/include/link.php";
+	  		include "../MVC/asset/include/link.php";
 	  ?>
 	</head>
 <body id="home">
@@ -17,11 +17,9 @@
 				The best in "health"<br />
 				web & mobile apps
 			</h1>
-			<p class="sub-text animated fadeInDown">
-				Get a great health with our website and apps. This is exclusively for the TB patients.
-			</p>
 			<div class="cta animated fadeInDown">
-				<a href="/MVC_Mhealth/view/login.php" class="button-outline ">Login</a>
+				<a href="#" class="button-outline" data-target="#login" data-toggle="modal">Login</a>
+				<a href="#" class="button-outline" data-target="#register" data-toggle="modal">Register</a>
 			</div>
 			<div class="img"></div>
 		</div>
@@ -44,7 +42,7 @@
 					</p>
 				</div>
 				<div class="col-md-6 image">
-					<img src="/MVC_Mhealth/asset/asset/images/feature1.png" class="img-responsive" alt="feature1" />
+					<img src="/MVC/asset/images/feature1.png" class="img-responsive" alt="feature1" />
 				</div>
 			</div>
 			<div class="divider"></div>
@@ -59,7 +57,7 @@
 					</p>
 				</div>
 				<div class="col-md-6 image">
-					<img src="/MVC_Mhealth/asset/asset/images/feature2.png" class="img-responsive" alt="feature2" />
+					<img src="/MVC/asset/images/feature2.png" class="img-responsive" alt="feature2" />
 				</div>
 			</div>
 		</div>		
@@ -79,19 +77,19 @@
 						<div class="btn-nav prev"></div>
 						<div class="btn-nav next"></div>
 						<div class="slide active">
-							<img src="/MVC_Mhealth/asset/images/slider/slide3.png" alt="slide3" />
+							<img src="/MVC/asset/images/slider/slide3.png" alt="slide3" />
 						</div>
 						<div class="slide">
 							<img src="../asset/images/slider/slide4.png" alt="slide4" />
 						</div>
 						<div class="slide">
-							<img src="/MVC_Mhealth/asset/images/slider/slide1.png" alt="slide1" />
+							<img src="/MVC/asset/images/slider/slide1.png" alt="slide1" />
 						</div>
 						<div class="slide">
-							<img src="/MVC_Mhealth/asset/images/slider/slide5.png" alt="slide5" />
+							<img src="/MVC/asset/images/slider/slide5.png" alt="slide5" />
 						</div>
 						<div class="slide">
-							<img src="/MVC_Mhealth/asset/images/slider/slide2.png" alt="slide2" />
+							<img src="/MVC/asset/images/slider/slide2.png" alt="slide2" />
 						</div>
 					</div>
 				</div>	
@@ -110,11 +108,11 @@
 						These are some of our patients who are leading a happy and healthy life.
 					</p>
 					<div class="logos" style="display:inline-block;">
-						<img src="/MVC_Mhealth/asset/images/patients/sample.jpg">
-						<img src="/MVC_Mhealth/asset/images/patients/sample.jpg">
-						<img src="/MVC_Mhealth/asset/images/patients/sample.jpg">
-						<img src="/MVC_Mhealth/asset/images/patients/sample.jpg">
-						<img src="/MVC_Mhealth/asset/images/patients/sample.jpg">
+						<img src="/MVC/asset/images/patients/sample.jpg">
+						<img src="/MVC/asset/images/patients/sample.jpg">
+						<img src="/MVC/asset/images/patients/sample.jpg">
+						<img src="/MVC/asset/images/patients/sample.jpg">
+						<img src="/MVC/asset/images/patients/sample.jpg">
 					</div>
 				</div>
 			</div>
@@ -206,5 +204,135 @@
 			</div>
 		</div>
 	</div>
+	<div id="login"class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+          	<h2>Login</h2>
+          </div>
+          <div class="modal-body">
+          	<form id="login_form">
+          		<div class="form-group">
+          			<label >Username</label>
+          			<input type="email" class="form-control" name="username" required placeholder="example@gamil.com">
+          		</div>
+          		<div class="form-group">
+          			<label >Password</label>
+          			<input type="password" class="form-control" name="password" required>
+          		</div>
+          		<div class="form-group col-sm-4 col-sm-offset-3">
+          			<input type="submit" class="form-control btn btn-primary btn-block " value="Login">
+          		</div>
+          	</form>
+      	  <hr/>
+      	  </div>
+    	  <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="register"class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+          	<h2>Register</h2>
+          </div>
+          <div class="modal-body">
+          	<form id="register_form">
+          		<div class="form-group">
+          			<label >Username</label>
+          			<input type="text" class="form-control" required name="name" placeholder="example">
+          		</div>
+          		<div class="form-group">
+          			<label >Email</label>
+          			<input type="email" class="form-control" required name="email" placeholder="example@gamil.com">
+          		</div>
+          		<div class="form-group">
+          			<label >Contact</label>
+          			<input type="contact" class="form-control" required name="contact" placeholder="9999999999">
+          		</div>
+          		<div class="form-group">
+          			<label >Password</label>
+          			<input type="password" class="form-control" name="password" required>
+          		</div>
+          		<div class="form-group col-sm-5 col-sm-offset-3">
+          			<input type="submit" class="form-control btn btn-large btn-primary btn-block " value="Register">
+          		</div>
+          	</form>
+          	<div class="form-status">
+          	</div>
+      	  <hr/>
+      	  </div>
+    	  <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </body>
+<script>
+$("#login_form").submit(function(e){
+	e.preventDefault();
+	var formData = new FormData();
+	var email  = $("#login_form [name=username]").val();
+	var password= $("#login_form [name=password]").val();
+	formData.append("mode","LOGIN");
+	formData.append("username",email);
+	formData.append("password",password);
+	back_call(formData);
+});
+
+$("#register_form").submit(function(e){
+	e.preventDefault();
+	var formData = new FormData();
+	var name  = $("#register_form [name=name]").val();
+	var email  = $("#register_form [name=email]").val();
+	var contact  = $("#register_form [name=contact]").val();
+	var password= $("#register_form [name=password]").val();
+	formData.append("mode","REGISTER");
+	formData.append("name",name);
+	formData.append("email",email);
+	formData.append("contact",contact);
+	formData.append("password",password);
+	back_call(formData);
+});
+
+function back_call(formData)
+{
+	$.ajax({
+	  url: '/MVC/controller/login/backend.php',
+	  type: 'POST',
+	  data: formData,
+	  cache: false,
+	  dataType: 'json',
+	  processData: false, // Don't process the file
+	  contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+	  success: function(json)
+	  {
+	    var res=$('<div/>').addClass(json.css).html(json.msg);
+	    if(json.status==1)
+	    { 
+	        $('.form-status').empty().html("<div class='alert alert-success'>You have successfully updated your Course Goals! </div>");
+	        $("#goal_wrapper_menu div i").removeClass('glyphicon glyphicon-unchecked').removeClass('incomplete').addClass('complete').addClass('glyphicon glyphicon-check');
+	        $("#goal_wrapper_menu").attr('status',"1");
+	        $("#basic_details_wrapper_menu").attr('status',"-1");
+	        $("#goal_wrapper_menu , #basic_details_wrapper_menu").popover('destroy').removeAttr('data-toggle');
+	        $(".next").removeClass("hidden");
+	        setTimeout(function(){$(".form-status").empty();},5000);
+	    }
+	    else
+	    {
+	      var res=$('<div/>').addClass('alert alert-danger').html('<strong>Oh snap!</strong> We couldnt upload the file, please try again!');
+	      $('.form-status').empty().append(res);   
+	    }
+	  },
+	  error:function(json)
+	  {
+	      var res=$('<div/>').addClass('alert alert-danger').html('<strong>Oh snap!</strong> We couldnt upload the file, please try again!');
+	      $('.form-status').empty().append(res);
+	  }
+});
+}
+</script>
 </html>

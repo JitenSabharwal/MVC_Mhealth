@@ -1,5 +1,4 @@
 <?php #this script add the subscriber details in database
-	session_start();
 	require_once("../model/classes/database.php");
 	require_once("../model/classes/retrieval.php");
 ?> 

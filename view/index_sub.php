@@ -26,7 +26,7 @@ else
 	<!-- inline js scripting -->
 	</head>
 <body>
-		<header class="navbar navbar-inverse hero" role="banner" style="background:indigo">
+	<header class="navbar navbar-inverse hero" role="banner" style="background:indigo">
   		<div class="container" >
     		<div class="navbar-header">
 		      	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -81,31 +81,6 @@ else
     		</nav>
   		</div>
 	</header>
-
-	<div id='wrapper'>
-		<div id='container' >
-			<div id='admin_panel_wrapper'>
-				<div id='admin_panel_container'>
-					
-					<div id='admin_panel_contentholder'>
-
-							<div id='_subscriber' class='contentHolder'>
-									<div class='contentSideMenu'>
-										<div>
-											<ul>
-											</ul>
-										</div>
-									</div>
-									<div class='responseHolder'>
-										
-									</div>
-							</div>
-							
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
+	
 </body>
 </html>

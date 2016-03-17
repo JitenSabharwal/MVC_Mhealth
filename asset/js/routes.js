@@ -4,11 +4,12 @@ $(document).ready(function(){
 	console.log("route");
 	//Route to Home
 	$(".home").click(function(){
-		$(".responseHolder").html("");
+		$(".responseHolder").addClass("hidden");
 	});
 	//Route to add new user
 	$(".addSubscriber").click(function(){
-		$(".responseHolder").load("../_subscriber/addSubscriber.html");		
+		$(".responseHolder").addClass("hidden");
+		$(".subscriber_wrapper").removeClass("hidden");		
 	});
 	//Route to Search 
 	$(".search_sub").click(function(){
@@ -16,8 +17,13 @@ $(document).ready(function(){
 	});
 	//Tests
 	// ---  Sputum --------
-	$(".test").click(function(){
-		$(".test_click").removeClass("hidden");
+	$(".sputum_test").click(function(){
+		$(".responseHolder").addClass("hidden");
+		$(".sputum_test_wrapper").removeClass("hidden");
+	});
+	$(".xray_test").click(function(){
+		$(".responseHolder").addClass("hidden");
+		$(".xray_test_wrapper").removeClass("hidden");
 	});
 	// $(".sputum").click(function(){
 	// 	$(".responseHolder").load("../diagnostic_test/sputum_test.php");			
@@ -41,12 +47,16 @@ $(document).ready(function(){
 
 	$(".logout").click(function(){
 		$.ajax({
-			type : "post" ,
-			url  : "../controller/login/logout.php"	,
-			success : function(data)
+			type : "POST" ,
+			url  : "/MVC_Mhealth/controller/login/backend.php"	,
+			data :{mode:"logout"},
+			cache: false,
+			dataType: 'json',
+			processData: false, // Don't process the file
+			contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+			success : function(json)
 					  {
-					  	if(data == "1")
-					  		window.open("../index/index.php","_self");
+						window.open("/MVC_Mhealth/index.php","_self");
 					  } ,
 			error : function(data)
 					{

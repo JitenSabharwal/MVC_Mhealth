@@ -1,4 +1,7 @@
-<?php #this script contains the class for database connection and passing queries ?>
+<?php 
+	session_start();
+	#this script contains the class for database connection and passing queries 
+?>
 <?php
 	class Database
 	{
@@ -14,11 +17,11 @@
 		{
 			switch($_SERVER['HTTP_HOST'])
 			{
-				case "localhost:60":
+				case "localhost":
 					$this->host="localhost";
 					$this->user="root";
 					$this->password="";
-					$this->database="mheal";
+					$this->database="final_project";
 				break;
 				case "www.mhealthsrm.org":
 					$this->host="localhost";
@@ -39,7 +42,7 @@
 		function connect()
 		{
 			$this->connection=mysqli_connect($this->host,$this->user,$this->password,$this->database) or die(mysql_error());
-			//mysql_select_db() or die(mysql_error());
+			// mysql_select_db() or die(mysql_error());
 		}
 		//function to insert data in database
 		function execute($insertQuery)

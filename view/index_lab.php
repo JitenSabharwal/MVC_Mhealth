@@ -85,9 +85,9 @@ else
   		</div>
 	</header>
 <!-- This where everything get loaded -->
-									<div class='responseHolder container'>
-										
-									</div>
+  <div class='responseHolder container'>
+  	
+  </div>
 
 </body>
 </html>

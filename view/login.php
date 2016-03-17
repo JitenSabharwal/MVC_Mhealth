@@ -2,14 +2,9 @@
 <html>
 <head>
 	<title>SRM mHealth Login</title>
-
-	<!-- css files -->
-	
 	<?php 
-	  		include "../../MVC_Mhealth/asset/include/link.php";
+	  		include_once("../../MVC_Mhealth/asset/include/link.php");
 	?>
-	<script type="text/javascript" src="../asset/js/login.js"></script>
-	
 </head>
 <body id="signup">
 	<div class="container">
@@ -30,17 +25,18 @@
 								<form role="form" name='adminLoginForm' id="loginform" method="post">
 							  		<div class="form-group">
 							    		<label for="email">Username</label>
-							    		<input type="text" name='loginUserId' maxlength="10" class="form-control userId" 
+							    		<input type="text" name='username' maxlength="10" class="form-control userId" 
 							    		 required placeholder="Enter your username."/>
 							  		</div>
 							  		<div class="form-group">
 							    		<label for="password">Password</label>
-							    		<input type='password' name='loginPassword' maxlength="15"  class="form-control" required placeholder="Enter your password." />
+							    		<input type='password' name='password' maxlength="15"  class="form-control" required placeholder="Enter your password." />
 							  		</div>
 							  		<div class="submit">
 							  			<input type="submit" class="btn btn-primary">
 							  		</div>
 								</form>
+								<div id="loginform-status"></div>
 							</div>
 						</div>						
 					</div>
@@ -50,5 +46,5 @@
 		</div>
 	</div>
 </body>
-	
+	<script type="text/javascript" src="/MVC_Mhealth/asset/js/login.js"></script>
 </html>
