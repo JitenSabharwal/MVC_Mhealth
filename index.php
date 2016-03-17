@@ -7,7 +7,7 @@
 	<title>mPower</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	  <?php 
-	  		include "../MVC/asset/include/link.php";
+	  		include "asset/include/link.php";
 	  ?>
 	</head>
 <body id="home">
@@ -42,7 +42,7 @@
 					</p>
 				</div>
 				<div class="col-md-6 image">
-					<img src="/MVC/asset/images/feature1.png" class="img-responsive" alt="feature1" />
+					<img src="<?php echo $g_url;?>asset/images/feature1.png" class="img-responsive" alt="feature1" />
 				</div>
 			</div>
 			<div class="divider"></div>
@@ -57,7 +57,7 @@
 					</p>
 				</div>
 				<div class="col-md-6 image">
-					<img src="/MVC/asset/images/feature2.png" class="img-responsive" alt="feature2" />
+					<img src="<?php echo $g_url;?>asset/images/feature2.png" class="img-responsive" alt="feature2" />
 				</div>
 			</div>
 		</div>		
@@ -77,19 +77,19 @@
 						<div class="btn-nav prev"></div>
 						<div class="btn-nav next"></div>
 						<div class="slide active">
-							<img src="/MVC/asset/images/slider/slide3.png" alt="slide3" />
+							<img src="<?php echo $g_url;?>asset/images/slider/slide3.png" alt="slide3" />
 						</div>
 						<div class="slide">
 							<img src="../asset/images/slider/slide4.png" alt="slide4" />
 						</div>
 						<div class="slide">
-							<img src="/MVC/asset/images/slider/slide1.png" alt="slide1" />
+							<img src="<?php echo $g_url;?>asset/images/slider/slide1.png" alt="slide1" />
 						</div>
 						<div class="slide">
-							<img src="/MVC/asset/images/slider/slide5.png" alt="slide5" />
+							<img src="<?php echo $g_url;?>asset/images/slider/slide5.png" alt="slide5" />
 						</div>
 						<div class="slide">
-							<img src="/MVC/asset/images/slider/slide2.png" alt="slide2" />
+							<img src="<?php echo $g_url;?>asset/images/slider/slide2.png" alt="slide2" />
 						</div>
 					</div>
 				</div>	
@@ -108,11 +108,11 @@
 						These are some of our patients who are leading a happy and healthy life.
 					</p>
 					<div class="logos" style="display:inline-block;">
-						<img src="/MVC/asset/images/patients/sample.jpg">
-						<img src="/MVC/asset/images/patients/sample.jpg">
-						<img src="/MVC/asset/images/patients/sample.jpg">
-						<img src="/MVC/asset/images/patients/sample.jpg">
-						<img src="/MVC/asset/images/patients/sample.jpg">
+						<img src="<?php echo $g_url;?>asset/images/patients/sample.jpg">
+						<img src="<?php echo $g_url;?>asset/images/patients/sample.jpg">
+						<img src="<?php echo $g_url;?>asset/images/patients/sample.jpg">
+						<img src="<?php echo $g_url;?>asset/images/patients/sample.jpg">
+						<img src="<?php echo $g_url;?>asset/images/patients/sample.jpg">
 					</div>
 				</div>
 			</div>
@@ -272,6 +272,7 @@
     </div><!-- /.modal -->
 </body>
 <script>
+var g_url = "http://mhealthsrm.org/MVC_Mhealth/";
 $("#login_form").submit(function(e){
 	e.preventDefault();
 	var formData = new FormData();
@@ -301,7 +302,7 @@ $("#register_form").submit(function(e){
 function back_call(formData)
 {
 	$.ajax({
-	  url: '/MVC/controller/login/backend.php',
+	  url: g_url+'controller/login/backend.php',
 	  type: 'POST',
 	  data: formData,
 	  cache: false,

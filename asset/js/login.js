@@ -1,3 +1,4 @@
+var g_url = "http://mhealthsrm.org";
 $("#loginform").submit(function(e){
 		e.preventDefault();
 		$("#loginform-status").empty();
@@ -9,7 +10,7 @@ $("#loginform").submit(function(e){
 		formData.append("username",username);
 		formData.append("password",password);
 		$.ajax({
-			url: "/MVC_Mhealth/controller/login/backend.php",
+			url: g_url+"controller/login/backend.php",
 			type: 'POST',
 			data: formData,
 			cache: false,
@@ -21,11 +22,11 @@ $("#loginform").submit(function(e){
 						{	
 							switch(json.user_type)
 							{
-								case "lab" : window.open("/MVC_Mhealth/view/index_lab.php","_self");
+								case "lab" : window.open(g_url+"view/index_lab.php","_self");
 												break;
-								case "sub" :window.open("/MVC_Mhealth/view/index_sub.php","_self");
+								case "sub" :window.open(g_url+"view/index_sub.php","_self");
 												break;
-								case "admin" :window.open("/MVC_Mhealth/view/index_admin.php","_self");
+								case "admin" :window.open(g_url+"view/index_admin.php","_self");
 												break;
 							}
 						}
