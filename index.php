@@ -253,6 +253,10 @@
           			<input type="contact" class="form-control" required name="contact" placeholder="9999999999">
           		</div>
           		<div class="form-group">
+          			<label >Personal Doctor Contact</label>
+          			<input type="contact" class="form-control" required name="personal_doctor" placeholder="9999999999">
+          		</div>
+          		<div class="form-group">
           			<label >Password</label>
           			<input type="password" class="form-control" name="password" required>
           		</div>
@@ -290,11 +294,13 @@ $("#register_form").submit(function(e){
 	var name  = $("#register_form [name=name]").val();
 	var email  = $("#register_form [name=email]").val();
 	var contact  = $("#register_form [name=contact]").val();
+	var personal_doctor  = $("#register_form [name=personal_doctor]").val();
 	var password= $("#register_form [name=password]").val();
 	formData.append("mode","REGISTER");
 	formData.append("name",name);
 	formData.append("email",email);
 	formData.append("contact",contact);
+	formData.append("personal_doctor",personal_doctor);
 	formData.append("password",password);
 	back_call(formData);
 });

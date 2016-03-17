@@ -25,7 +25,8 @@
 				$email = $_REQUEST['email'];
 				$contact = $_REQUEST['contact'];
 				$password = md5(trim($_REQUEST['password']));
-				$sql = "INSERT INTO `user`(`name`,`email`,`contact`,`password`) VALUES('$name','$email','$contact','$password')";
+				$personal_doctor = $_REQUEST['personal_doctor'];
+				$sql = "INSERT INTO `user`(`name`,`email`,`contact`,`personal_doctor`,`password`) VALUES('$name','$email','$contact','$personal_doctor','$password')";
 				$insert = $db->execute($sql);
 				$result = array(
 								"status" => 1 ,
