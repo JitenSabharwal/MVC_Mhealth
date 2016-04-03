@@ -49,7 +49,65 @@
 				}	
 			}
 		break;
-		case "logout":
+		case "PERSONAL":
+			//Connection
+			$db=new Database();
+			$db->connect();
+
+			$name = $_REQUEST['name'];
+			$dob = $_REQUEST['dob'];
+			$age = $_REQUEST['age'];
+			$contact = $_REQUEST['contact'];
+			$address = $_REQUEST['address'];
+			$blood_group = $_REQUEST['blood_group'];
+			$gender = $_REQUEST['gender'];
+			$marital_status = $_REQUEST['marital_status'];
+			$sql  = "UPDATE user set `name` = '$name' , `dob`= '$dob' ,`age`= '$age' ,`contact`='$contact' , `addredd` = '$address' , `blood_group` = '$blood_group' , `marital_status` = '$marital_status' where `id` = ".$_SESSION['user_id'];
+			if($db->execute($sql))
+			{
+				$result = array(
+							"status" => 1 ,
+							"css"	 => "alert alert-success" ,
+							"msg"	 => "Its fine"
+						  );	
+			}
+		break;
+		case "FAMILY":
+			//Connection
+			$db=new Database();
+			$db->connect();
+
+			$rel_name = $_REQUEST['rel_name'];
+			$rel_contact = $_REQUEST['rel_contact'];
+			$sql  = "UPDATE user set `rel_name` = '$rel_name' , `rel_contact`= '$rel_contact'  where `id` = ".$_SESSION['user_id'];
+			if($db->execute($sql))
+			{
+				$result = array(
+							"status" => 1 ,
+							"css"	 => "alert alert-success" ,
+							"msg"	 => "Its fine"
+						  );	
+			}
+		break;
+		case "DOCTOR":
+			//Connection
+			$db=new Database();
+			$db->connect();
+
+			$doc_name = $_REQUEST['doc_name'];
+			$doc_contact = $_REQUEST['doc_contact'];
+			$sql  = "UPDATE user set `doc_name` = '$doc_name' , `doc_contact`= '$doc_contact'  where `id` = ".$_SESSION['user_id'];
+			echo $sql;
+			if($db->execute($sql))
+			{
+				$result = array(
+							"status" => 1 ,
+							"css"	 => "alert alert-success" ,
+							"msg"	 => "Its fine"
+						  );	
+			}
+		break;
+		case "LOGOUT":
 			$_SESSION['user_id'] = null;
 			$result = array(
 								"status" => 1 ,
@@ -71,17 +129,18 @@ function login()
 			);
 	$userId = trim($_REQUEST['username']);
 	$password=md5(trim($_REQUEST['password']));
-
-	$sql="SELECT * from users where email='".$userId."' and password='".$password."'";
-
+	$sql="SELECT * from user where email='$userId' and password='$password'";
 	$db= new Database();
 	$db->connect();
-	$sql_result=mysqli_fetch_assoc($db->execute($sql));
+	$result = $db->execute($sql);
+	$sql_result;
+	if($result)
+		$sql_result=mysqli_fetch_assoc($result);
 	$db->disconnect();
 
 	if(!empty($sql_result))
 	{	
-		$_SESSION['user_id']=$sql_result['user_id'];
+		$_SESSION['user_id']=$sql_result['id'];
 		$_SESSION['time']=time();
 	}
 	else

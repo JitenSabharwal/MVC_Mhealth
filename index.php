@@ -2,12 +2,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />	
 	<title>mPower</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	  <?php 
+	
 	  		include "asset/include/link.php";
+			session_start();
+			if(isset($_SESSION['user_id']))
+			{
+				header("location:patient.php");
+			}
 	  ?>
 	</head>
 <body id="home">
@@ -80,16 +87,13 @@
 							<img src="<?php echo $g_url;?>asset/images/slider/slide3.png" alt="slide3" />
 						</div>
 						<div class="slide">
-							<img src="../asset/images/slider/slide4.png" alt="slide4" />
+							<img src="<?php echo $g_url;?>asset/images/slider/slide4.png" alt="slide4" />
 						</div>
 						<div class="slide">
 							<img src="<?php echo $g_url;?>asset/images/slider/slide1.png" alt="slide1" />
 						</div>
 						<div class="slide">
 							<img src="<?php echo $g_url;?>asset/images/slider/slide5.png" alt="slide5" />
-						</div>
-						<div class="slide">
-							<img src="<?php echo $g_url;?>asset/images/slider/slide2.png" alt="slide2" />
 						</div>
 					</div>
 				</div>	
@@ -189,12 +193,6 @@
 							<input type="submit" value="Sign up" />
 						</form>
 					</div>
-					<a href="#">
-						<img src="../asset/images/social-tw.png" alt="twitter" />
-					</a>
-					<a href="#">
-						<img src="../asset/images/social-dbl.png" alt="dribbble" />
-					</a>
 				</div>
 			</div>
 			<div class="row credits">
@@ -225,6 +223,8 @@
           		</div>
           	</form>
       	  <hr/>
+      	  <div class="form-status">
+          	</div>
       	  </div>
     	  <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -252,10 +252,10 @@
           			<label >Contact</label>
           			<input type="contact" class="form-control" required name="contact" placeholder="9999999999">
           		</div>
-          		<div class="form-group">
+          		<!-- <div class="form-group">
           			<label >Personal Doctor Contact</label>
           			<input type="contact" class="form-control" required name="personal_doctor" placeholder="9999999999">
-          		</div>
+          		</div> -->
           		<div class="form-group">
           			<label >Password</label>
           			<input type="password" class="form-control" name="password" required>
@@ -264,6 +264,7 @@
           			<input type="submit" class="form-control btn btn-large btn-primary btn-block " value="Register">
           		</div>
           	</form>
+          	<hr/>
           	<div class="form-status">
           	</div>
       	  <hr/>
@@ -276,7 +277,9 @@
     </div><!-- /.modal -->
 </body>
 <script>
-var g_url = "http://mhealthsrm.org/MVC_Mhealth/";
+// var g_url = "http://mhealthsrm.org/MVC_Mhealth/";
+var g_url = "/MVC/";
+
 $("#login_form").submit(function(e){
 	e.preventDefault();
 	var formData = new FormData();
@@ -300,7 +303,7 @@ $("#register_form").submit(function(e){
 	formData.append("name",name);
 	formData.append("email",email);
 	formData.append("contact",contact);
-	formData.append("personal_doctor",personal_doctor);
+	// formData.append("personal_doctor",personal_doctor);
 	formData.append("password",password);
 	back_call(formData);
 });
@@ -326,6 +329,7 @@ function back_call(formData)
 	        $("#basic_details_wrapper_menu").attr('status',"-1");
 	        $("#goal_wrapper_menu , #basic_details_wrapper_menu").popover('destroy').removeAttr('data-toggle');
 	        $(".next").removeClass("hidden");
+	        window.open("patient.php","_self");
 	        setTimeout(function(){$(".form-status").empty();},5000);
 	    }
 	    else
