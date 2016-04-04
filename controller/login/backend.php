@@ -97,7 +97,6 @@
 			$doc_name = $_REQUEST['doc_name'];
 			$doc_contact = $_REQUEST['doc_contact'];
 			$sql  = "UPDATE user set `doc_name` = '$doc_name' , `doc_contact`= '$doc_contact'  where `id` = ".$_SESSION['user_id'];
-			echo $sql;
 			if($db->execute($sql))
 			{
 				$result = array(
