@@ -1,6 +1,6 @@
 <?php
 	
-	include_once("asset/classes/database.php"); 
+	include_once("/asset/classes/database.php"); 
 ?>
 <?php
 	$result = array(
@@ -19,20 +19,42 @@
 		break;
 		//To check whether the person logged in correct or not
 		case "REGISTER":
+				
 				$db=new Database();
 				$db->connect();
-				$name = $_REQUEST['name'];
-				$email = $_REQUEST['email'];
-				$contact = $_REQUEST['contact'];
-				$password = md5(trim($_REQUEST['password']));
-				$personal_doctor = $_REQUEST['personal_doctor'];
-				$sql = "INSERT INTO `user`(`name`,`email`,`contact`,`personal_doctor`,`password`) VALUES('$name','$email','$contact','$personal_doctor','$password')";
-				$insert = $db->execute($sql);
-				$result = array(
-								"status" => 1 ,
-								"css"	 => "alert alert-success" ,
-								"msg"	 => "Youre are successfully Registered"
-							  );
+				if(isset($_REQUEST['name']) && $_REQUEST['name'] != '' )
+				{	
+					$name = $_REQUEST['name'];
+					$email = $_REQUEST['email'];
+					$contact = $_REQUEST['contact'];
+					$password = $_REQUEST['password'];
+					$dob = $_REQUEST['dob'];
+					$age = $_REQUEST['age'];
+					
+					$address = $_REQUEST['address'];
+					$marital_status = $_REQUEST['marital_status'];
+					$blood_group = $_REQUEST['blood_group'];
+					
+					$rel_name = $_REQUEST['rel_name'];
+					$rel_contact = $_REQUEST['rel_contact'];
+					
+					$doc_name = $_REQUEST['doc_name'];
+					$doc_contact = $_REQUEST['doc_contact'];
+				
+					$sql = "INSERT INTO `user`(`name`,`email`,`contact`,`password`, `dob` , `age` , `address` , `marital_status`, `blood_group` , `rel_name` , `rel_contact` ,`doc_name`, `doc_contact`)
+					 		VALUES('$name','$email','$contact','$password', '$dob' , '$address' , '$marital_status' , '$blood_group' , '$rel_name' , '$rel_contact' , '$doc_name' ,'$doc_contact')";
+					
+					$insert = $db->execute($sql);
+					
+					if($insert)
+					{
+						$result = array(
+									"status" => 1 ,
+									"css"	 => "alert alert-success" ,
+									"msg"	 => "Youre are successfully Registered"
+								  );
+					}
+				}
 		break;	
 		case "login_verification":
 			if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != '' && $_SESSION['user_id'] != null)
