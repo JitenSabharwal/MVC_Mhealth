@@ -45,9 +45,7 @@
 				
 					$sql = "INSERT INTO `user`(`name`,`email`,`contact`,`password`, `dob` , `age` , `address` , `marital_status`, `blood_group` , `rel_name` , `rel_contact` ,`doc_name`, `doc_contact`)
 					 		VALUES('$name','$email','$contact','$password', '$dob' , $age , '$address' , '$marital_status' , '$blood_group' , '$rel_name' , '$rel_contact' , '$doc_name' ,'$doc_contact')";
-					var_dump($sql);
 					$insert = $db->execute($sql);
-					var_dump($insert);
 					if($insert)
 					{
 						$result = array(
@@ -101,8 +99,8 @@ function login()
 	$sql="SELECT * FROM `user` WHERE `email` ='$userId' and `password` ='$password'";
 	$db= new Database();
 	$db->connect();
-	$db->execute($sql);
-	$sql_result=mysqli_fetch_assoc();
+	$result = $db->execute($sql);
+	$sql_result=mysqli_fetch_assoc($result);
 	$db->disconnect();
 
 	if(!empty($sql_result))
