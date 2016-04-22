@@ -1,14 +1,16 @@
 <?php
 	
-	include_once("/asset/classes/database.php"); 
+	include_once("asset/classes/database.php"); 
 ?>
 <?php
 	$result = array(
-				"status" => 0 ,
+				"status" => 0,
 				"css"	 => "alert alert-danger" ,
 				"msg"	 => "Ops! Some Error Occured"
 			  );
+
 	$mode =@$_REQUEST['mode'];
+
 	switch($mode)
 	{
 		case "LOGIN":
@@ -42,10 +44,10 @@
 					$doc_contact = $_REQUEST['doc_contact'];
 				
 					$sql = "INSERT INTO `user`(`name`,`email`,`contact`,`password`, `dob` , `age` , `address` , `marital_status`, `blood_group` , `rel_name` , `rel_contact` ,`doc_name`, `doc_contact`)
-					 		VALUES('$name','$email','$contact','$password', '$dob' , '$address' , '$marital_status' , '$blood_group' , '$rel_name' , '$rel_contact' , '$doc_name' ,'$doc_contact')";
-					
+					 		VALUES('$name','$email','$contact','$password', '$dob' , $age , '$address' , '$marital_status' , '$blood_group' , '$rel_name' , '$rel_contact' , '$doc_name' ,'$doc_contact')";
+					var_dump($sql);
 					$insert = $db->execute($sql);
-					
+					var_dump($insert);
 					if($insert)
 					{
 						$result = array(
@@ -99,7 +101,8 @@ function login()
 	$sql="SELECT * FROM `user` WHERE `email` ='$userId' and `password` ='$password'";
 	$db= new Database();
 	$db->connect();
-	$sql_result=mysqli_fetch_assoc($db->execute($sql));
+	$db->execute($sql);
+	$sql_result=mysqli_fetch_assoc();
 	$db->disconnect();
 
 	if(!empty($sql_result))

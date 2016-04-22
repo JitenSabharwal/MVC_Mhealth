@@ -25,8 +25,8 @@
 				web & mobile apps
 			</h1>
 			<div class="cta animated fadeInDown">
-				<a href="#" class="button-outline" data-target="#login" data-toggle="modal">Login</a>
-				<a href="#" class="button-outline" data-target="#register" data-toggle="modal">Register</a>
+				<a href="#" class="button-outline" data-target="#login" data-toggle="modal" style="text-decoration:none;">Login</a>
+				<a href="#" class="button-outline" data-target="#register" data-toggle="modal" style="text-decoration:none;">Register</a>
 			</div>
 			<div class="img"></div>
 		</div>
