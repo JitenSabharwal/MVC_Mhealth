@@ -497,7 +497,7 @@
           </div>
         </div>
     </div>
-    <div id="problem_modal hidden"class="modal fade" tabindex="-1" role="dialog">
+    <div id="problem_modal"class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body" >

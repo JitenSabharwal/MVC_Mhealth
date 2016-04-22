@@ -29,7 +29,7 @@
 					$name = $_REQUEST['name'];
 					$email = $_REQUEST['email'];
 					$contact = $_REQUEST['contact'];
-					$password = $_REQUEST['password'];
+					$password = md5($_REQUEST['password']);
 					$dob = $_REQUEST['dob'];
 					$age = $_REQUEST['age'];
 					
