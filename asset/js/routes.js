@@ -8,5 +8,5 @@ function _switch(t)
 	$("#"+_form).removeClass("hidden");
 
 }
-// var g_url = "http://mhealthsrm.org/MVC_Mhealth/";
-var g_url = "/MVC/";
+var g_url = "http://mhealthsrm.org/MVC_Mhealth/";
+// var g_url = "/MVC/";

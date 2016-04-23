@@ -1,6 +1,6 @@
 <?php
-// $g_url = "http://mhealthsrm.org/MVC_Mhealth/";
-	$g_url = "../MVC/";
+$g_url = "http://mhealthsrm.org/MVC_Mhealth/";
+// /	$g_url = "../MVC/";
 ?>
 	  
 
