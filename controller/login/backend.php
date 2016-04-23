@@ -114,6 +114,14 @@
 								"msg"	 => "Youre are successfully logged out"
 							  );
 		break;
+		case "GETDETAIL" :
+			$db = new Database();
+			$db->connect();
+			$uid = $_SESSION['user_id'];
+			$result_r = $db->execute("SELECT * from user where id = $uid");	
+			$sql_result=mysqli_fetch_assoc($result_r);
+			$result = array("status" => 1 , "user" => $sql_result);
+		break;
 	}
 	echo json_encode($result);
 ?>

@@ -277,8 +277,8 @@
     </div><!-- /.modal -->
 </body>
 <script>
-var g_url = "http://mhealthsrm.org/MVC_Mhealth/";
-// var g_url = "/MVC/";
+// var g_url = "http://mhealthsrm.org/MVC_Mhealth/";
+var g_url = "/MVC/";
 
 $("#login_form").submit(function(e){
 	e.preventDefault();

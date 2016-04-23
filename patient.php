@@ -215,7 +215,7 @@
                 
                 <div style="box-shadow: 5px 5px 20px grey; margin-bottom:10px;" class="col-sm-8" onclick="disp('poc')"> 
                       <div class="col-sm-4">
-                        <img src="http://beyondthebasicshealthacademy.com/wp-content/uploads/2015/12/PCOS.jpg" height="100" width="100" alt="no-image"/>
+                        <img src="asset/img/PCOS.jpg" height="100" width="100" alt="no-image"/>
                       </div>
                       <div class="col-sm-8">
                         <h1 style="color:darkgray">PCOS</h1>
@@ -225,7 +225,7 @@
                 
                 <div style="box-shadow: 5px 5px 20px grey;margin-top:50px; margin-bottom:10px;" class="col-sm-8" onclick="disp('bc')"> 
                       <div class="col-sm-4">
-                        <img src="http://kidshealth.org/EN/images/headers/K-breastCancer-enHD-AR1.gif" height="90" width="100" alt="no-image"/>
+                        <img src="asset/img/bc.gif" height="90" width="100" alt="no-image"/>
                       </div>
                       <div class="col-sm-8">
                         <h1 style="color:darkgray">Breast Cancer</h1>
@@ -235,7 +235,7 @@
                 
                 <div style="box-shadow: 5px 5px 20px grey;margin-top:50px; margin-bottom:10px;" class="col-sm-8" onclick="disp('cc')"> 
                       <div class="col-sm-4">
-                        <img src="http://image.shutterstock.com/z/stock-vector-teal-white-ribbon-for-cervical-cancer-awareness-campaign-in-january-345350747.jpg" height="100" width="100" alt="no-image"/>
+                        <img src="asset/img/cc.jpg" height="100" width="100" alt="no-image"/>
                       </div>
                       <div class="col-sm-8">
                         <h1 style="color:darkgray">Cervical Cancer</h1>
@@ -245,7 +245,7 @@
                 
                 <div style="box-shadow: 5px 5px 20px grey;margin-top:50px ; margin-bottom:10px;" class="col-sm-8" onclick="disp('ot')"> 
                       <div class="col-sm-4">
-                        <img src="https://edc2.healthtap.com/ht-staging/user_answer/avatars/453116/large/open-uri20121021-2644-ayzaeo.jpeg?1386601903" height="100" width="100" alt="no-image"/>
+                        <img src="asset/img/ot.jpeg" height="100" width="100" alt="no-image"/>
                       </div>
                       <div class="col-sm-8">
                         <h1 style="color:darkgray">Ovarian Torsion</h1>
@@ -255,7 +255,7 @@
 
                 <div style="box-shadow: 5px 5px 20px grey;margin-top:50px; margin-bottom:10px;" class="col-sm-8" onclick="disp('pid')"> 
                       <div class="col-sm-4">
-                        <img src="https://s-media-cache-ak0.pinimg.com/236x/24/82/7d/24827d03d85a7d85823299fd38bfbee9.jpg" height="100" width="100" alt="no-image"/>
+                        <img src="asset/img/pid.jpg" height="100" width="100" alt="no-image"/>
                       </div>
                       <div class="col-sm-8">
                         <h1 style="color:darkgray">PID</h1>
@@ -303,7 +303,7 @@
                 </div>
               </div>
               <div class="col-sm-12">
-                <div class="col-sm-offset-2 col-sm-8 hidden" style="box-shadow: 5px 5px 20px grey; margin-bottom:20px;height:100px;">
+                <div class="col-sm-offset-2 col-sm-8 hidden new_date" style="box-shadow: 5px 5px 20px grey; margin-bottom:20px;height:100px;">
                    <h3> Next predicted Date:</h3>
                 </div>
               </div> 
@@ -888,6 +888,36 @@
 </body>
 
 <script>
+$(function(){
+  var formdata = new FormData();
+  formdata.append("mode","GETDETAIL");
+  $.ajax({
+    url: g_url+"controller/login/backend.php",
+    type: 'POST',
+    data: formdata,
+    cache: false,
+    dataType: 'json',
+    processData: false, // Don't process the file
+    contentType: false,
+    success: function( json )
+    {
+      if(json.status==1)
+      {
+        $("#personal_details [name = name]").val(json.user['name']);
+        $("#personal_details [name = dob]").val(json.user['dob']);
+        $("#personal_details [name = age]").val(json.user['age']);
+        $("#personal_details [name = contact]").val(json.user['contact']);
+        $("#personal_details [name = address]").val(json.user['address']);
+        $("#personal_details [name = blood_group]").val(json.user['blood_group']);
+        $("#personal_details [name = marital_status]").val(json.user['marital_status']);
+        $("#doctor_details [name = doc_name]").val(json.user['doc_name']);
+        $("#doctor_details [name = doc_contact]").val(json.user['doc_contact']);
+        $("#family_details [name = rel_name]").val(json.user['rel_name']);
+        $("#family_details [name = rel_contact]").val(json.user['rel_contact']);
+      }
+    }
+  });
+});
 $(".problem_desc .nav-pills li a").click(function(){
   var id = $(this).attr("item");
   $(".content_item").addClass("hidden");
@@ -911,6 +941,7 @@ $("#family_details").submit(function(e){
     update_detail(ser,"FAMILY");
     
 });
+
 $("#doctor_details").submit(function(e){
     e.preventDefault();
     var ser = $("#doctor_details").serialize();
@@ -918,6 +949,13 @@ $("#doctor_details").submit(function(e){
     
 });
 
+$("#period_form").submit(function(e){
+  e.preventDefault();
+  var date_s = $("#period_form [name = start_date]").val();
+  var cycle = $("#period_form [name = cycle]").val();
+  var myDate = new Date(new Date(date_s).getTime()+(cycle*24*60*60*1000));
+  $(".new_date").removeClass("hidden").append(myDate);
+});
 function disp(t)
 {
     $('#problem_modal').modal('show');
@@ -925,6 +963,7 @@ function disp(t)
     $(".modal-body ."+t).removeClass("hidden");
     $("#desc"+t).removeClass("hidden");
 }
+
 function update_detail(ser,_mode)
 {
  
